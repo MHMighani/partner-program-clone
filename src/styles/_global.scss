@@ -1,0 +1,20 @@
+//reset
+html {
+    //reset rem font size
+    font-size: 10px;
+}
+
+*,*::before,*::after {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
