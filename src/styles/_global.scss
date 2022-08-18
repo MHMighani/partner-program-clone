@@ -1,7 +1,15 @@
-//reset
+// fonts
+@font-face {
+    font-family: 'colfax';
+    src: url('../fonts/colfax-font/Colfax-Regular.otf') format('otf');
+}
+
+// reset
 html {
-    //reset rem font size
+    // reset rem font size
     font-size: 10px;
+
+    --landing-page-font: "colfax", "sans-serif"
 }
 
 *,*::before,*::after {
@@ -17,4 +25,8 @@ ol,ul {
 a {
     text-decoration: none;
     color: unset;
+}
+
+body{
+    font-family: var(--landing-page-font);
 }
