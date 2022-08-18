@@ -1,9 +1,15 @@
 import NavMenu from "./navMenu";
-import AuthButtons from "./authButtons";
+import AuthLink from "./authLinks";
 import { ReactComponent as NavLogo } from "../../assets/navbar-logo.svg";
 
+import "./navbar.scss";
+
 function NavbarLogo() {
-  return <NavLogo />;
+  return (
+    <a href="#" className="navbarLogo">
+      <NavLogo />
+    </a>
+  );
 }
 
 function Navbar() {
@@ -32,9 +38,9 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__content">
-        <AuthButtons />
-        <NavMenu navMenuItems={navMenuItems} />
         <NavbarLogo />
+        <NavMenu navMenuItems={navMenuItems} />
+        <AuthLink />
       </div>
     </div>
   );
