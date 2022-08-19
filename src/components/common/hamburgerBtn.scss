@@ -1,0 +1,35 @@
+.hamburger-btn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__button{
+        margin-left:.8rem;
+    }
+
+    &__bar {
+        transition: transform .2s,opacity .2s;
+        transform: rotate(0);
+        opacity: 1;
+    }
+
+    &--expanded &__bar {
+        
+
+        &:nth-of-type(1) {
+            transform: rotate(-45deg);
+            transform-origin: 13.5px 5.5px;
+        }
+
+        &:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+            transform: rotate(45deg);
+            transform-origin: 15px 10.5px;
+        }
+
+
+    }
+}

@@ -3,6 +3,7 @@ import AuthLink from "./authLinks";
 import { ReactComponent as NavLogo } from "../../assets/navbar-logo.svg";
 import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
 import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
+import HamburgerBtn from "../common/hamburgerBtn";
 
 import "./navbar.scss";
 
@@ -56,6 +57,7 @@ function Navbar() {
         <NavbarLogo />
         <NavMenu navMenuItems={navMenuItems} />
         <AuthLink />
+        <HamburgerBtn />
       </div>
     </div>
   );
