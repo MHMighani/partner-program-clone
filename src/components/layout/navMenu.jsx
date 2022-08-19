@@ -4,9 +4,11 @@ function NavMenu({ navMenuItems }) {
     <nav className="nav">
       <ul className="nav__menu">
         {navMenuItems.map((item) => (
-          <li className="nav__item" key={item.id}>
+          <li className="nav-item" key={item.id}>
             {item.type === "link" ? (
-              <a href={item.link}>{item.label}</a>
+              <a className="nav-item__label" href={item.link}>
+                {item.label}
+              </a>
             ) : (
               <SubMenu subItems={item.subItems} label={item.label} />
             )}

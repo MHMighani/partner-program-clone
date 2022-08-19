@@ -14,8 +14,6 @@ function NavbarLogo() {
 
 function Navbar() {
   const navMenuItems = [
-    { id: "help", type: "link", label: "Help Center", link: "#" },
-    { id: "blog", type: "link", label: "Blog", link: "#" },
     {
       id: "partnerships",
       type: "button",
@@ -34,6 +32,8 @@ function Navbar() {
         { id: "chatbot", label: "ChatBot", link: "#" },
       ],
     },
+    { id: "help", type: "link", label: "Help Center", link: "#" },
+    { id: "blog", type: "link", label: "Blog", link: "#" },
   ];
   return (
     <div className="navbar">
