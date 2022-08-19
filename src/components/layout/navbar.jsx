@@ -1,6 +1,8 @@
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
 import { ReactComponent as NavLogo } from "../../assets/navbar-logo.svg";
+import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
+import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
 
 import "./navbar.scss";
 
@@ -13,6 +15,19 @@ function NavbarLogo() {
 }
 
 function Navbar() {
+  const livechatLinkContent = (
+    <>
+      <LivechatLogo className="icon" />
+      LiveChat
+    </>
+  );
+
+  const chatbotLinkContent = (
+    <>
+      <ChatbotLogo className="icon" />
+      ChatBot
+    </>
+  );
   const navMenuItems = [
     {
       id: "partnerships",
@@ -28,8 +43,8 @@ function Navbar() {
       type: "button",
       label: "Products",
       subItems: [
-        { id: "livechat", label: "LiveChat", link: "#" },
-        { id: "chatbot", label: "ChatBot", link: "#" },
+        { id: "livechat", label: livechatLinkContent, link: "#" },
+        { id: "chatbot", label: chatbotLinkContent, link: "#" },
       ],
     },
     { id: "help", type: "link", label: "Help Center", link: "#" },
