@@ -1,13 +1,20 @@
+import { ReactComponent as Chevron } from "../../assets/chevron.svg";
+
 function SubMenu({ subItems, label }) {
   return (
     <>
-      <button>{label}</button>
-      <div className="menu__sub">
-        <ul className="menu__items">
+      <button className="nav-item__label">
+        {label}
+        <Chevron className="chevron" />
+      </button>
+      <div className="nav-sub">
+        <ul className="nav-sub__items">
           {subItems.map((item) => (
-            <a key={item.id} href={item.link}>
-              {item.label}
-            </a>
+            <li className="nav-sub__item" key={item.id}>
+              <a href={item.link} className="link">
+                {item.label}
+              </a>
+            </li>
           ))}
         </ul>
       </div>
