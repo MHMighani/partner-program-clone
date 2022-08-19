@@ -1,15 +1,27 @@
 // fonts
 @font-face {
     font-family: 'colfax';
-    src: url('../fonts/colfax-font/Colfax-Regular.otf') format('otf');
+    src: url('../fonts/colfax-font/Colfax-Bold.otf') format('otf');
 }
 
 // reset
 html {
     // reset rem font size
     font-size: 10px;
+    --btn-red-color: #ee0007;
+    --dark-color: #0f0f10;
+    --btn-dark-color: #0f0f10;
+    --landpage-font: "colfax", "sans-serif";
+    --btn-border-radius: .4rem;
+}
 
-    --landing-page-font: "colfax", "sans-serif"
+button {
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
 }
 
 *,*::before,*::after {
@@ -28,5 +40,13 @@ a {
 }
 
 body{
-    font-family: var(--landing-page-font);
+    font-family: var(--landpage-font);
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 500;
+    border-radius: var(--btn-border-radius);
 }
