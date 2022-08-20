@@ -1,8 +1,19 @@
 // fonts
 @font-face {
-    font-family: 'colfax';
-    src: url('../fonts/colfax-font/Colfax-Bold.otf') format('otf');
+    font-family: 'colfax-bold';
+    src: url('../fonts/colfax-font/ColfaxWebBold.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'colfax';
+    src: url('../fonts/colfax-font/ColfaxWebMedium.woff2') format('woff2');
+}
+
+// @font-face {
+//     font-family: 'colfax';
+//     src: url('../fonts/colfax-font/ColfaxWebRegular.woff2') format('woff2');
+// }
+
 
 // reset
 html {
@@ -49,4 +60,9 @@ body{
     white-space: nowrap;
     font-weight: 500;
     border-radius: var(--btn-border-radius);
+    cursor: pointer;
+}
+
+input[type=email] {
+    padding: 1.2rem;
 }
