@@ -1,3 +1,4 @@
+import MobileAuthLinks from "./mobileAuthLinks";
 import SubMenu from "./subMenu";
 function NavMenu({ navMenuItems }) {
   return (
@@ -15,6 +16,7 @@ function NavMenu({ navMenuItems }) {
           </li>
         ))}
       </ul>
+      <MobileAuthLinks />
     </nav>
   );
 }
