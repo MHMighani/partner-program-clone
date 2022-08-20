@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./hamburgerBtn.scss";
 
-function HamburgerBtn() {
+function HamburgerBtn({ onBtnClick }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   function handleBtnClick() {
     setIsExpanded(!isExpanded);
+    onBtnClick();
   }
 
   return (

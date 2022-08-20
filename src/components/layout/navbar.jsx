@@ -1,9 +1,10 @@
+import { useState } from "react";
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
 import { ReactComponent as NavLogo } from "../../assets/navbar-logo.svg";
 import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
 import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
-import HamburgerBtn from "../common/hamburgerBtn";
+import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
 
 import "./navbar.scss";
 
@@ -16,6 +17,12 @@ function NavbarLogo() {
 }
 
 function Navbar() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  function handleNavState() {
+    setIsExpanded(!isExpanded);
+  }
+
   const livechatLinkContent = (
     <>
       <LivechatLogo className="icon" />
@@ -53,11 +60,13 @@ function Navbar() {
   ];
   return (
     <div className="navbar">
-      <div className="navbar__content">
+      <div
+        className={`navbar__content ${isExpanded ? "navbar--expanded" : ""}`}
+      >
         <NavbarLogo />
         <NavMenu navMenuItems={navMenuItems} />
         <AuthLink />
-        <HamburgerBtn />
+        <HamburgerBtn onBtnClick={handleNavState} />
       </div>
     </div>
   );
