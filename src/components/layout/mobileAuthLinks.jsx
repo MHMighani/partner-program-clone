@@ -3,7 +3,7 @@ function MobileAuthLinks() {
     <div className="mobile-auth-links">
       <form className="signup-form">
         <input type="email" placeholder="Enter your email" />
-        <button className="btn auth-link red-btn">Join now</button>
+        <button className="btn auth-link btn--red">Join now</button>
       </form>
 
       <p className="login">

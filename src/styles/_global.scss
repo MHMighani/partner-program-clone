@@ -24,6 +24,7 @@ html {
     --btn-dark-color: #0f0f10;
     --landpage-font: "colfax", "sans-serif";
     --btn-border-radius: .4rem;
+    --red-btn-hover-color: #cf0006;
 }
 
 button {
@@ -61,6 +62,29 @@ body{
     font-weight: 500;
     border-radius: var(--btn-border-radius);
     cursor: pointer;
+
+    transition: background-color .2s, color .2s, border .2s;
+    transition-timing-function: ease;
+
+    &--red {
+        background-color: var(--btn-red-color);
+        color: #fff;
+        border: 1px solid var(--btn-red-color);
+
+        &:hover {
+            background-color: var(--red-btn-hover-color);
+        }
+    }
+
+    &--white {
+        color: var(--dark-color);
+        border: 1px solid var(--dark-color);
+
+        &:hover {
+            background-color: var(--dark-color);
+            color: #fff;
+        }
+    }
 }
 
 input[type=email] {

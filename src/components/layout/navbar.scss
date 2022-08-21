@@ -57,12 +57,6 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     }
 }
 
-.red-btn {
-    background-color: var(--btn-red-color);
-    color: #fff;
-    border: 1px solid var(--btn-red-color);
-}
-
 .nav{
     display: none;
     flex-direction: column;
@@ -225,17 +219,6 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     padding: .8rem 1.6rem;
     min-width: 9.6rem;
     margin: 0 .4rem;
-    
-
-    &.signup {
-        color: var(--dark-color);
-        border: 1px solid var(--dark-color);
-
-        &:hover {
-            background-color: var(--dark-color);
-            color: #fff;
-        }
-    }
 }
 
 .mobile-auth-links {
