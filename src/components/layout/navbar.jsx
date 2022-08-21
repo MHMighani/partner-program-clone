@@ -55,8 +55,8 @@ function Navbar() {
         { id: "chatbot", label: chatbotLinkContent, link: "#" },
       ],
     },
-    { id: "help", type: "link", label: "Help Center", link: "#" },
     { id: "blog", type: "link", label: "Blog", link: "#" },
+    { id: "help", type: "link", label: "Help Center", link: "#" },
   ];
   return (
     <div className="navbar">
