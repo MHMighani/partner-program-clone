@@ -8,12 +8,15 @@ $nav-item-padding-mobile: 2rem 2.4rem;
 
 .navbar {
     position: sticky;
+    z-index: 100;
+    top: 0;
     right: 0;
     left: 0;
     height: $navbar-height-mobile;
     font-size: 1.6rem;
     border-bottom: 1px solid #f6f6f7;
     padding: 0 2.4rem;
+    background: #fff;
 
 
     &__content {
@@ -37,7 +40,6 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     &__auth-links {
         display: none;
     }
-    
 
     @media screen and (min-width: $desktop-screen-breakpoint){
         height: $navbar-height-desktop;
@@ -66,13 +68,11 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     width: 100%;
     height: calc(100% - $navbar-height-mobile);
     overflow: auto;
-
+    background: #fff;
 
     &__menu {
         display: flex;
         flex-direction: column;
-        
-        
     }
 
     @media screen and (min-width: $desktop-screen-breakpoint) {
@@ -229,13 +229,12 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     padding: 2.4rem;
     width: 100%;
     
-    .signup-form {
-        display: flex;
+    .email-signup-form {
         width: 100%;
         margin-bottom: 2.4rem;
     }
-    input[type=email]{
-        width: 100%;
+
+    .email-input{
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }

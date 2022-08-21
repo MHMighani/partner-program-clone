@@ -9,10 +9,10 @@
     src: url('../fonts/colfax-font/ColfaxWebMedium.woff2') format('woff2');
 }
 
-// @font-face {
-//     font-family: 'colfax';
-//     src: url('../fonts/colfax-font/ColfaxWebRegular.woff2') format('woff2');
-// }
+@font-face {
+    font-family: 'colfax-regular';
+    src: url('../fonts/colfax-font/ColfaxWebRegular.woff2') format('woff2');
+}
 
 
 // reset
@@ -87,6 +87,3 @@ body{
     }
 }
 
-input[type=email] {
-    padding: 1.2rem;
-}

@@ -1,10 +1,9 @@
+import EmailSignupForm from "../forms/emailSignupForm";
+
 function MobileAuthLinks() {
   return (
     <div className="mobile-auth-links">
-      <form className="signup-form">
-        <input type="email" placeholder="Enter your email" />
-        <button className="btn auth-link btn--red">Join now</button>
-      </form>
+      <EmailSignupForm submitText="Join now" />
 
       <p className="login">
         <a href="#" className="login-link">
