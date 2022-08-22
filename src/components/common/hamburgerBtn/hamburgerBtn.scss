@@ -1,6 +1,7 @@
+@use '../../../styles/abstracts/' as *;
+
 .hamburger-btn{
-    display: flex;
-    align-items: center;
+    @include flex(row,center,center);
     cursor: pointer;
 
     &__button{

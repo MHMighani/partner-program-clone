@@ -4,7 +4,7 @@ $navbar-max-width:1360px;
 $nav-item-padding-desktop: 1.2rem 1.6rem;
 $nav-item-padding-mobile: 2rem 2.4rem;
 
-@use '../../styles/variables' as *;
+@use '../../styles/abstracts' as *;
 
 .navbar {
     position: sticky;
@@ -18,30 +18,22 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     padding: 0 2.4rem;
     background: #fff;
 
-
     &__content {
         margin:0 auto;
-        display: flex;
+        @include flex(row,space-between,center);
         height: 100%;
-        justify-content: space-between;
-        align-items: center;
         max-width: $navbar-max-width;
     }    
 
-    &--expanded .nav{
-        display: flex;
-    }
-
-    .hamburger-btn {
+    &--expanded .nav,.hamburger-btn{
         display: flex;
     }
     
-
     &__auth-links {
         display: none;
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint){
+    @include desktop{
         height: $navbar-height-desktop;
 
         .hamburger-btn {
@@ -71,11 +63,10 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     background: #fff;
 
     &__menu {
-        display: flex;
-        flex-direction: column;
+        @include flex($alignItems: space-between)
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint) {
+    @include desktop {
         position: relative;
         top: 0;
         height: unset;
@@ -114,20 +105,19 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     }
 
     &__label {
-        display: flex;
-        justify-content: space-between;
+        @include flex(row,space-between);
         width: 100%;
         padding: $nav-item-padding-mobile;
-        margin-bottom: 1px solid 
-    }
+        margin-bottom: 1px solid;
 
-    @media screen and (min-width: $desktop-screen-breakpoint) {
-        border-bottom: none;
-        &__label {
-            display: flex;
+        @include desktop {
             padding:$nav-item-padding-desktop;
             align-items: center;
         }
+    }
+
+    @include desktop {
+        border-bottom: none;
         
         &.active &__label {
             color: var(--dark-color);
@@ -150,7 +140,7 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     
     }
 
-    @media screen and (min-width: $large-screen-breakpoint) {
+    @include largeDesktop {
         margin: 0 1.2rem;
     }
 }
@@ -160,12 +150,10 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     
     
     &__items {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex($alignItems: unset)
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint){
+    @include desktop{
         padding: 3.2rem;
         position: absolute;
         border-radius: 10px;
@@ -182,28 +170,25 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     border-bottom: 1px solid #eeeeef;
 
     .link{
+        @include flex(row,flex-start,center);
         width: 100%;
-        display: flex;
-        align-items: center;
         padding:1.2rem 1.6rem;
         border-radius: 10px;
         
         &:hover {
             background-color: #f6f6f7; 
-
         }
     }
 
     .icon {
         display: none;
-        
     }
 
     &:last-child{
         margin-bottom: 0;
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint) {
+    @include desktop {
         .icon {
             display: block;
             margin-right: 1.2rem;
@@ -222,10 +207,8 @@ $nav-item-padding-mobile: 2rem 2.4rem;
 }
 
 .mobile-auth-links {
-    display: flex;
+    @include flex($justifyContent: center);
     margin-top: auto;
-    flex-direction: column;
-    align-items: center;
     padding: 2.4rem;
     width: 100%;
     
@@ -252,7 +235,7 @@ $nav-item-padding-mobile: 2rem 2.4rem;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
-    @media screen and (min-width: $desktop-screen-breakpoint){
+    @include desktop{
         display: none;
     }
 }

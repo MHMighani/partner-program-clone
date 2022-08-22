@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+@mixin flex($direction: column,$justifyContent:center,$alignItems:center,) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-screen-breakpoint) {
+        @content;
+    }
+}
+
+@mixin largeDesktop{
+    @media screen and (min-width: $large-screen-breakpoint) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (min-width: $tablet-screen-breakpoint) {
+        @content;
+    }
+} 
+
+@mixin smallScreens{
+    @media screen and (min-width: $small-screen-breakpoint) {
+        @content;
+    }
+}

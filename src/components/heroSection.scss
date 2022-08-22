@@ -1,10 +1,8 @@
-@use '../styles/variables' as *;
+@use '../styles/abstracts' as *;
 
 .hero-section{
-    display: flex;
-    flex-direction: column;
+    @include flex();
     padding-top: 4.8rem;
-    font-family: 'colfax-regular';
 
     .section__title {
         text-align: center;
@@ -43,7 +41,7 @@
             margin-bottom: .8rem;
         }
 
-        @media screen and (min-width: $small-screen-breakpoint) {
+        @include smallScreens {
             flex-direction: row;
 
             .email-input {
@@ -52,17 +50,15 @@
         }
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint) {
+    @include desktop {
         padding-top: 6.4rem;
         
         .section__title,&__description{
             text-align: left;
-        }
-        
-        
+        }   
     }
 
-    @media screen and (min-width: $tablet-screen-breakpoint){
+    @include tablet{
         &__stats {
             grid-template-columns: repeat(2,1fr);
         }
@@ -75,8 +71,7 @@
         margin-bottom: 1.8rem
     }
 
-    @media screen and (min-width: $desktop-screen-breakpoint) {
-        
+    @include desktop {
         text-align: left;
     }
 }
@@ -90,10 +85,9 @@
     }
 
     &__description {
+        @include flex(column,$alignItems:flex-start);
         position: absolute;
-        display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
         padding: .8rem 1.2rem;
         background-color: var(--bg-gray);
     }
