@@ -3,7 +3,7 @@ import EmailSignupForm from "../forms/emailSignupForm";
 function MobileAuthLinks() {
   return (
     <div className="mobile-auth-links">
-      <EmailSignupForm submitText="Join now" />
+      <EmailSignupForm submitText="Join now" submitBtnText="Join now" />
 
       <p className="login">
         <a href="#" className="login-link">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
-import { ReactComponent as NavLogo } from "../../assets/navbar-logo.svg";
+import NavLogo from "../../assets/navbar-logo.svg";
 import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
 import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
 import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
@@ -9,9 +9,10 @@ import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
 import "./navbar.scss";
 
 function NavbarLogo() {
+  console.log(NavLogo);
   return (
-    <a href="#" className="navbarLogo">
-      <NavLogo />
+    <a href="#" className="navbar__logo">
+      <img src={NavLogo} alt="" />
     </a>
   );
 }

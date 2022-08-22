@@ -2,10 +2,10 @@ function AuthLinks() {
   return (
     <div className="navbar__auth-links">
       <a href="" className="auth-link btn btn--white">
-        Join now
+        Log in
       </a>
       <a href="#" className="auth-link btn btn--red">
-        Log in
+        Join now
       </a>
     </div>
   );
