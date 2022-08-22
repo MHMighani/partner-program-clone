@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+
+.section{
+    &__title {
+        font-size: 3.62rem;
+
+        @media screen and (min-width: $small-screen-breakpoint) {
+            font-size: calc(3.62rem + 2.24562 * (100vw - $small-screen-breakpoint)/39);
+        }
+
+        @media screen and (min-width: $large-screen-breakpoint) {
+            font-size: 7.213rem;
+        }
+    }
+
+    &__container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        &--xl{
+            max-width: 135.2rem;
+        }
+
+        @media screen and (min-width: $desktop-screen-breakpoint){
+            flex-direction: row;
+        }   
+    }
+}
