@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
-import NavLogo from "../../assets/navbar-logo.svg";
+import NavLogo from "../../assets/partner-programs-logo.svg";
 import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
 import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
 import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
