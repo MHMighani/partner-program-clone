@@ -1,4 +1,4 @@
-@use '../styles/abstracts' as *;
+@use '../../styles/abstracts' as *;
 
 .hero-section{
     @include flex();
@@ -77,11 +77,6 @@
 
 .hero-image {
     position: relative;
-    
-
-    img {
-        width: 100%;
-    }
 
     &__description {
         @include flex(column,$alignItems:flex-start);

@@ -1,7 +1,7 @@
-import EmailSignupForm from "./forms/emailSignupForm";
-import SectionTitle from "./common/sectionTitle";
-import heroImage from "../assets/hero-image.jpg";
-import BlobSvg from "../assets/blog.svg";
+import EmailSignupForm from "../forms/emailSignupForm";
+import SectionTitle from "../common/sectionTitle";
+import heroImage from "../../assets/businessIntro/hero-image.jpg";
+import BlobSvg from "../../assets/businessIntro/blog.svg";
 import "./heroSection.scss";
 
 function Stats({ number, comment }) {

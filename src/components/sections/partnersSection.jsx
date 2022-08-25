@@ -1,5 +1,7 @@
-import SectionSeperator from "../assets/section-seperator";
-import SectionTitle from "./common/sectionTitle";
+import SectionSeperator from "../../assets/businessIntro/section-seperator";
+import SectionTitle from "../common/sectionTitle";
+
+import "./partnersSection.scss";
 
 function Plan({ details }) {
   return (
@@ -58,7 +60,7 @@ function PartnersSection() {
     <section className="section partners-section">
       <div className="section__container">
         <div className="section__intro">
-          <SectionTitle title={sectionDetails.title} />
+          <SectionTitle size="h2" title={sectionDetails.title} />
           <p className="section__summary">{sectionDetails.description}</p>
         </div>
         <img src="" alt="" />

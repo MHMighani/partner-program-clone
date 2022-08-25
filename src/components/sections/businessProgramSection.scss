@@ -1,0 +1,25 @@
+@use '../../styles/abstracts/' as *;
+
+.business-section {
+    background-color: var(--grey-color);
+
+    &__plans {
+        @include flex(column,center,flex-start);
+    }
+}
+
+.business-plans {
+    @include flex(column,center,flex-start);
+
+    @include tablet {
+        @include flex(row,center,flex-start);
+    }
+}
+
+.business-plan {
+    &__description {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 3.2rem;
+    }
+}

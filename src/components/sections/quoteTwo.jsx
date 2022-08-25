@@ -1,5 +1,5 @@
-import QuoteSection from "./common/quoteSection";
-import QuoteTwoImage from "../assets/quote-2.jpg";
+import QuoteSection from "../common/quoteSection";
+import QuoteTwoImage from "../../assets/businessIntro/quote-2.jpg";
 
 function QuoteTwo() {
   const quoteDetails = {
