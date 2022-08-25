@@ -14,7 +14,7 @@ $nav-item-padding-mobile: 2rem 2.4rem;
     left: 0;
     height: $navbar-height-mobile;
     font-size: 1.6rem;
-    border-bottom: 1px solid #f6f6f7;
+    border-bottom: 1px solid var(--grey-color);
     padding: 0 2.4rem;
     background: #fff;
 
@@ -176,7 +176,7 @@ $nav-item-padding-mobile: 2rem 2.4rem;
         border-radius: 10px;
         
         &:hover {
-            background-color: #f6f6f7; 
+            background-color: var(--grey-color); 
         }
     }
 

@@ -9,7 +9,6 @@ import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
 import "./navbar.scss";
 
 function NavbarLogo() {
-  console.log(NavLogo);
   return (
     <a href="/" className="navbar__logo">
       <img src={NavLogo} alt="" />
