@@ -6,7 +6,7 @@ function BusinessPlan({ title, description, linkText }) {
     <div className="business-plan plan">
       <h3 className="plan__title">{title}</h3>
       <p className="plan__description">{description}</p>
-      <a href="#" className="btn btn--dark business-plan__link">
+      <a href="/" className="btn btn--dark business-plan__link">
         {linkText}
       </a>
     </div>
@@ -14,16 +14,18 @@ function BusinessPlan({ title, description, linkText }) {
 }
 
 function BusinessProgramSection() {
-  const title = (
-    <>
-      Choose a program
-      <br /> that fits you best
-    </>
-  );
+  const sectionDetails = {
+    title: (
+      <>
+        Choose a program
+        <br /> that fits you best
+      </>
+    ),
+  };
 
   return (
     <section className="section business-section">
-      <SectionTitle title={title} />
+      <SectionTitle title={sectionDetails.title} size="h1" />
       <div className="business-section__plans">
         <BusinessPlan
           title="Promote, earn, and&nbsp;grow"

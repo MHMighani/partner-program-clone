@@ -33,7 +33,7 @@ function FooterPolicy() {
           continuing to browse our Site, you consent to the collection, use, and
           storage of cookies on your device for us and our partners. You can
           revoke your consent any time in your device browsing settings.
-          <a href="#">Click “Cookies Policy”</a>
+          <a href="/">Click “Cookies Policy”</a>
           to check how you can control them through your device.
         </p>
       </div>
@@ -83,13 +83,13 @@ function Footer() {
         </div>
       </nav>
       <div className="footer__contact">
-        <a href="#" className="contact-us">
+        <a href="/" className="contact-us">
           Contact us
           <img src={footerIcons.MailIcon} alt="mail-icon" />
         </a>
         <div className="social-icons">
-          <a href="#"></a>
-          <a href="#"></a>
+          {/* <a href="/"></a>
+          <a href="/"></a> */}
         </div>
       </div>
       <FooterPolicy />

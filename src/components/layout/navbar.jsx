@@ -11,7 +11,7 @@ import "./navbar.scss";
 function NavbarLogo() {
   console.log(NavLogo);
   return (
-    <a href="#" className="navbar__logo">
+    <a href="/" className="navbar__logo">
       <img src={NavLogo} alt="" />
     </a>
   );

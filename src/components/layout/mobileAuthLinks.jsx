@@ -6,7 +6,7 @@ function MobileAuthLinks() {
       <EmailSignupForm submitText="Join now" submitBtnText="Join now" />
 
       <p className="login">
-        <a href="#" className="login-link">
+        <a href="/" className="login-link">
           Already a partner? <span className="login__text">Log in</span>
         </a>
       </p>

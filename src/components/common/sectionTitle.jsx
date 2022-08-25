@@ -1,5 +1,7 @@
-function SectionTitle({ title }) {
-  return <h1 className="section__title">{title}</h1>;
+import React from "react";
+
+function SectionTitle({ title, size = "h1" }) {
+  return React.createElement(size, { className: "section__title" }, title);
 }
 
 export default SectionTitle;

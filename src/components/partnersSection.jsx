@@ -69,7 +69,7 @@ function PartnersSection() {
           <Plan key={plan.title} details={plan} />
         ))}
         <div className="partners-section__link">
-          <a href="#" className="btn btn--red">
+          <a href="/" className="btn btn--red">
             {sectionDetails.linkLabel}
           </a>
         </div>
