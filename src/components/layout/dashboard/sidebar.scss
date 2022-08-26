@@ -1,0 +1,51 @@
+@use '../../../styles/abstracts/' as *;
+
+$sidebarWidth: 64px;
+$sidebarBackground: #131317;
+$sidebarTextColor: #c9c9cd;
+
+.sidebar {
+    @include flex(column,unset,unset);
+    background: $sidebarBackground;
+    color: $sidebarTextColor;
+    width: $sidebarWidth;
+    height: 100%;
+    position: fixed;
+    z-index: 200;
+
+    &__bottom {
+        margin-top: auto;
+    }
+
+    &__list {
+        position: relative;
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        color: #bebebe;
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem .3rem .9rem 0;
+        border-left: 3px solid transparent;
+        transition: all .3s;
+
+        &.active {
+            border-left: 3px solid var(--blue-color);
+            background: #262627;
+            color: #fff;
+        }
+
+        .icon {
+            color: #fff;   
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto 1px;
+    }
+}
