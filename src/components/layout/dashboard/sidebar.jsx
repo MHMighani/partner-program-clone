@@ -1,7 +1,5 @@
-import * as sidebarIcons from "../../../assets/dashboard/sidebar";
-
-import "./sidebar.scss";
 import { useState } from "react";
+import * as sidebarIcons from "../../../assets/dashboard/sidebar";
 
 function NavList({ name, links, handleClick }) {
   return (

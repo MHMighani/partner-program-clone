@@ -1,11 +1,27 @@
-import PartnersLogos from "../../sections/partnersLogos";
+import { useState } from "react";
+import PartnerProgramLogo from "../../../assets/dashboard/partner-programs-logo.svg";
+import HamburgerBtn from "../../common/hamburgerBtn/hamburgerBtn";
 
-function NavbarMbile() {
+function NavMobile() {
+  const [isopen, setIsopen] = useState(false);
   return (
-    <nav className="nav-mobile">
-      <PartnersLogos />
-    </nav>
+    <div className="nav-mobile-wrapper">
+      <nav className="nav-mobile">
+        <img
+          className="logo"
+          src={PartnerProgramLogo}
+          alt="partner program logo"
+        />
+        <HamburgerBtn onBtnClick={() => setIsopen(!isopen)} />
+      </nav>
+      {isopen && (
+        <ul className="nav-menu">
+          <li className="nav-menu__item">one</li>
+          <li className="nav-menu__item">two</li>
+        </ul>
+      )}
+    </div>
   );
 }
 
-export default NavbarMbile;
+export default NavMobile;

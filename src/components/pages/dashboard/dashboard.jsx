@@ -1,4 +1,4 @@
-import Sidebar from "../../layout/dashboard/sidebar";
+import Navbar from "../../layout/dashboard/navbar";
 import Home from "./home/home";
 
 import "./dashboard.scss";
@@ -6,7 +6,7 @@ import "./dashboard.scss";
 function Dashboard() {
   return (
     <div className="dashboard-main-wrapper">
-      <Sidebar />
+      <Navbar />
       <Home />
     </div>
   );

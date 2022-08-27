@@ -1,0 +1,109 @@
+@use '../../../styles/abstracts/' as *;
+
+$sidebarWidth: 64px;
+$navbarBackground: #131317;
+$sidebarTextColor: #c9c9cd;
+
+.sidebar {
+    @media screen and (max-width: $desktop-screen-breakpoint) {
+        display: none;
+    }
+
+    @include flex(column,unset,unset);
+    background: $navbarBackground;
+    color: $sidebarTextColor;
+    width: $sidebarWidth;
+    height: 100%;
+    position: fixed;
+    z-index: 200;
+
+    &__bottom {
+        margin-top: auto;
+    }
+
+    &__list {
+        position: relative;
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        color: #bebebe;
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem .3rem .9rem 0;
+        border-left: 3px solid transparent;
+        transition: all .3s;
+
+        &.active {
+            border-left: 3px solid var(--blue-color);
+            background: #262627;
+            color: #fff;
+        }
+
+        .icon {
+            color: #fff;   
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto 1px;
+    }
+}
+
+.dashboard-main-wrapper .nav-mobile-wrapper {
+    @include desktop {
+        display: none;
+    }
+
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+}
+
+.dashboard-main-wrapper .nav-mobile {
+    @include flex(row,space-between,center);
+    padding: 1.6rem 3rem 1.6rem 2.4rem;
+    background: $navbarBackground;
+    color: #c9c9cd;
+
+    .logo {
+        margin: 0;
+        margin-right: auto;
+        width: auto;
+    }
+
+    
+}
+
+.nav-mobile-wrapper .nav-menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $navbarBackground;
+
+    &__item {
+        color: #fff;
+        background: #29292f;
+        border-left: 3px solid #06f;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #e2e2e4;
+        border-left: 3px solid transparent;
+        cursor: pointer;
+        transition: all .3s;
+    }
+}
+
