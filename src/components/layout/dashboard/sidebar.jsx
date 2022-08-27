@@ -18,6 +18,14 @@ function NavList({ name, links, handleClick }) {
   );
 }
 
+function Avatar({ text }) {
+  return (
+    <div className=" sidebar__item avatar">
+      <span>{text}</span>
+    </div>
+  );
+}
+
 function Sidebar() {
   const topLinks = [
     {
@@ -95,6 +103,7 @@ function Sidebar() {
         links={topLinksState}
       />
       <NavList name="sidebar__bottom" links={bottomLinks} />
+      <Avatar text="MM" />
     </nav>
   );
 }

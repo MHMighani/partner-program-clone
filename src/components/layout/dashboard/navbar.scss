@@ -44,6 +44,18 @@ $sidebarTextColor: #c9c9cd;
         .icon {
             color: #fff;   
         }
+
+        &.avatar {
+            @include flex(row,center,center);
+            background: #003288;
+            width: 32px;
+            height: 32px;
+            margin: 1rem auto;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 3.2rem;
+            border-radius: 50%;
+        }
     }
 
     &__icon {
