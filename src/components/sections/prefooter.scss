@@ -1,0 +1,83 @@
+@use '../../styles/abstracts/' as *;
+
+$prefooterBackground: var(--yellow-color);
+
+.business-intro .prefooter-section {
+    background-color: $prefooterBackground;
+    overflow: hidden;
+
+    .container {
+        padding-top: 6.4rem;
+        padding-bottom: 6.4rem;
+        position: relative;
+
+        @include smallScreens{
+            padding-top: 9.6rem;
+            padding-bottom: 9.6rem;
+        }
+    }
+
+    .decor-item {
+        width: auto;
+
+        &--left {
+            left: 0;
+            transform: translateX(-100%);
+            
+        }
+
+        &--right {
+            right: 0;
+            transform: translateX(100%);
+        }
+    }
+
+    .section__title {
+        text-align: center;
+        margin-bottom: 2rem;
+        @include text-p2;
+        
+        @include tablet {
+            margin-bottom: 6.4rem;
+        }
+    }
+
+    .email-signup-form {
+        flex-direction: column;
+        max-width: 54.4rem;
+        .email-input {
+            margin-bottom: 1rem;
+
+            @include smallScreens {
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+        }
+
+        @include smallScreens {
+            flex-direction: row;
+            justify-content: center;
+            margin: 0 auto
+        }
+    }
+
+    .benefits-list {
+        font-family: 'colfax-regular';
+        @include flex(column,center,center);
+        font-size: 1.6rem;
+        
+
+        @media screen and (min-width: 425px) {
+            flex-direction: row;
+            
+        }
+
+        .tick-svg {
+            margin-right: .8rem;
+        }
+        .item {
+            @include flex(row,unset,center);
+            margin: 1rem .5rem;
+        }
+    }
+}
