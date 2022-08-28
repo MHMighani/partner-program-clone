@@ -28,6 +28,7 @@ html {
     --red-btn-hover-color: #cf0006;
     --blue-color: #06f;
     --grey-color: #f6f6f7;
+    --yellow-color: #ffd000;
 }
 
 button {
@@ -47,6 +48,14 @@ button {
 
 ol,ul {
     list-style: none;
+}
+
+img, video {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 100%;
+    height: auto;
 }
 
 a {

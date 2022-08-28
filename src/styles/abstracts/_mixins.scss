@@ -1,11 +1,112 @@
 @use './variables' as *;
 
+@function calculateResponsiveText($first,$second,$breakpoint) {
+    @return calc($first + $second * (100vw - $breakpoint)/39);
+}
+
+
 @mixin flex($direction: column,$justifyContent:center,$alignItems:center,) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justifyContent;
     align-items: $alignItems;
 }
+
+@mixin showInDesktop {
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
+}
+
+
+@mixin hideInDesktop {
+    display: block;
+
+    @include desktop{
+        display: none;
+    }
+}
+
+@mixin showInTabletBigger {
+    display: none;
+
+    @include tablet {
+        display: block
+    }
+}
+
+@mixin hideInTabletSmaller {
+    display: block;
+
+    @include tablet {
+        display: none
+    }
+}
+
+@mixin text-p1 {
+    font-family: 'colfax-bold';
+    font-size: 3.619rem;
+    font-weight: 700;
+    line-height: 1.05;
+
+    @include smallScreens {
+        
+            font-size: calculateResponsiveText(3.619rem,2.24562 ,$small-screen-breakpoint );
+        
+    }
+
+    @include largeDesktop {
+        font-size: 7.212rem;
+    }
+}
+
+@mixin text-p2 {
+    font-size: 3.1472rem;
+    font-weight: 700;
+    line-height: 1.05;
+    
+    @include smallScreens {
+        font-size: calculateResponsiveText(3.148rem,1.44782 ,$small-screen-breakpoint );
+    }
+
+    @include largeDesktop {
+        font-size: 5.464rem;
+    }
+}
+
+@mixin text-p4 {
+    font-family: 'colfax-bold';
+    font-size: 2.332rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include smallScreens {
+        font-size: calculateResponsiveText(2.232rem,.47239 ,$small-screen-breakpoint );
+    }
+
+    @include largeDesktop {
+     font-size: 3.136rem;   
+    }
+}
+
+@mixin text-p5 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.35;
+
+    @include smallScreens {
+        font-size: calculateResponsiveText(2rem,.19125 ,$small-screen-breakpoint );
+    }
+}
+
+@mixin text-p6 {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+
 
 @mixin desktop {
     @media screen and (min-width: $desktop-screen-breakpoint) {
