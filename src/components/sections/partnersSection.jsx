@@ -1,13 +1,46 @@
 import SectionSeperator from "../../assets/businessIntro/section-seperator";
 import SectionTitle from "../common/sectionTitle";
 
+import partnersMobileImage from "../../assets/businessIntro/partnersSection/partners-mobile.png";
+import partnersDesktopImage from "../../assets/businessIntro/partnersSection/partners-desktop.png";
+
 import "./partnersSection.scss";
+
+const plans = [
+  {
+    title: (
+      <>
+        Strengthen your <br /> online presence
+      </>
+    ),
+    description:
+      "By offering reliable products, you reinforce your brand and gain the credibility you need to attract more customers.",
+  },
+  {
+    title: (
+      <>
+        Discover new <br /> revenue streams
+      </>
+    ),
+    description:
+      "Opening up to the online communication industry will help you to create additional product and service offerings.",
+  },
+  {
+    title: (
+      <>
+        Grow your <br /> customer base
+      </>
+    ),
+    description:
+      "Have your business promoted among our audience and get even more exposure for your business.",
+  },
+];
 
 function Plan({ details }) {
   return (
-    <div>
-      <h3>{details.title}</h3>
-      <p>{details.description}</p>
+    <div className="partners-section__plan">
+      <h3 className="title">{details.title}</h3>
+      <p className="description">{details.description}</p>
     </div>
   );
 }
@@ -26,54 +59,43 @@ function PartnersSection() {
     linkLabel: "Join Partner Program",
   };
 
-  const plans = [
-    {
-      title: (
-        <>
-          Strengthen your <br /> online presence
-        </>
-      ),
-      description:
-        "By offering reliable products, you reinforce your brand and gain the credibility you need to attract more customers.",
-    },
-    {
-      title: (
-        <>
-          Discover new <br /> revenue streams
-        </>
-      ),
-      description:
-        "Opening up to the online communication industry will help you to create additional product and service offerings.",
-    },
-    {
-      title: (
-        <>
-          Grow your <br /> customer base
-        </>
-      ),
-      description:
-        "Have your business promoted among our audience and get even more exposure for your business.",
-    },
-  ];
-
   return (
     <section className="section partners-section">
-      <div className="section__container">
+      <div className="container">
         <div className="section__intro">
-          <SectionTitle size="h2" title={sectionDetails.title} />
-          <p className="section__summary">{sectionDetails.description}</p>
+          <div>
+            <SectionTitle size="h2" title={sectionDetails.title} />
+            <p className="section__summary">{sectionDetails.description}</p>
+          </div>
+
+          <div className="image-wrapper">
+            <img
+              className="mobile-image"
+              src={partnersMobileImage}
+              alt="three people laughing"
+            />
+            <img
+              className="desktop-image"
+              src={partnersDesktopImage}
+              alt="three people laughing"
+            />
+          </div>
         </div>
-        <img src="" alt="" />
       </div>
-      <SectionSeperator />
-      <div className="partners-section__plans">
-        {plans.map((plan) => (
-          <Plan key={plan.title} details={plan} />
-        ))}
-        <div className="partners-section__link">
-          <a href="/" className="btn btn--red">
-            {sectionDetails.linkLabel}
-          </a>
+
+      <SectionSeperator previousColor="#fff" nextColor="#f6f6f7" />
+      <div className=" partners-section__plans">
+        <div className="container">
+          <div className="plan-items">
+            {plans.map((plan) => (
+              <Plan key={plan.title} details={plan} />
+            ))}
+          </div>
+          <div className="partners-section__link">
+            <a href="/" className="btn btn--red">
+              {sectionDetails.linkLabel}
+            </a>
+          </div>
         </div>
       </div>
     </section>

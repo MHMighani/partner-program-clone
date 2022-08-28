@@ -1,0 +1,62 @@
+@use '../../styles/abstracts/' as *;
+
+.business-intro .partners-section {
+    @include flex(column,center,center);
+
+    .section__intro {
+        @include flex(column,unset,unset);
+
+        @include tablet {
+            @include flex(row,center,center);
+        }
+    }
+
+    .section__title {
+        @include text-p1;
+    }
+
+    .section__summary {
+        @include text-p5;
+    }
+
+    .mobile-image {
+        @include hideInTabletSmaller;
+    }
+
+    .desktop-image {
+        @include showInTabletBigger;
+    }
+
+    
+    &__plans {
+        padding-top: 16rem;
+        padding-bottom: 5rem;
+        width: 100%;
+        @include flex(column,center,center);
+        background-color: var(--grey-color);
+
+
+    }
+
+    .plan-items {
+        @include flex(column,center,flex-start);
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+    }
+
+    &__plan {
+        .title {
+            @include text-p4;
+            margin-bottom: 2.4rem;
+
+        }
+
+        .description {
+            @include text-p6;
+            margin-bottom: 1.8rem;
+        }
+    }
+}
