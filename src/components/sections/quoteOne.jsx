@@ -1,4 +1,5 @@
 import QuoteSection from "../common/quoteSection";
+import Highlight from "../common/highlight";
 import QuoteImageOne from "../../assets/businessIntro/quote-1.png";
 
 function QuoteOne() {
@@ -6,9 +7,10 @@ function QuoteOne() {
     name: "quoteOne",
     main: (
       <>
-        My experience with this Partner Program has been incredible. <br />{" "}
-        Products are easy-to-use, the set up is simple, and we receive a great
-        partner discount.
+        My experience with this Partner Program has been{" "}
+        <Highlight color="white">incredible</Highlight>. <br /> Products are
+        easy-to-use, the set up is simple, and we receive a great partner
+        discount.
       </>
     ),
     image: QuoteImageOne,

@@ -1,5 +1,6 @@
 import SectionSeperator from "../../assets/businessIntro/section-seperator";
 import SectionTitle from "../common/sectionTitle";
+import Highlight from "../common/highlight";
 
 import partnersMobileImage from "../../assets/businessIntro/partnersSection/partners-mobile.png";
 import partnersDesktopImage from "../../assets/businessIntro/partnersSection/partners-desktop.png";
@@ -51,7 +52,7 @@ function PartnersSection() {
       <>
         Together,
         <br />
-        we’re stronger
+        we’re <Highlight>stronger</Highlight>
       </>
     ),
     description:

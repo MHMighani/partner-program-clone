@@ -1,6 +1,7 @@
 import SectionTitle from "../common/sectionTitle";
 import { ReactComponent as LinkSvg } from "../../assets/businessIntro/link.svg";
 import * as images from "../../assets/businessIntro/businessProgramSection";
+import Highlight from "../common/highlight";
 
 import "./businessProgramSection.scss";
 
@@ -27,8 +28,15 @@ function BusinessProgramSection() {
   const sectionDetails = {
     title: (
       <>
+        make your businesses
+        <br /> <Highlight>our business</Highlight>
+      </>
+    ),
+    titleDesktop: (
+      <>
         Choose a program
-        <br /> that fits you best
+        <br />
+        that <Highlight>fits you best</Highlight>
       </>
     ),
   };
@@ -64,23 +72,44 @@ function BusinessProgramSection() {
 
   return (
     <section className="section business-section">
-      {/* <div>
-        <img src={images.BlobSvg} alt="decor" />
-      </div> */}
       <div className="section__container">
-        <SectionTitle title={sectionDetails.title} size="h1" />
-
-        <img src={images.ImageTablet} alt="business" />
-
-        <div className="business-section__plans">
-          <div className="business-plans">
-            {businesses.map((business) => (
-              <BusinessPlan key={business.title} details={business} />
-            ))}
+        {/* <div className="decor">
+          <img src={images.BlobSvg} alt="blob" />
+        </div> */}
+        <div className="business-section__body">
+          <div className="image-wrapper desktop">
+            <img
+              className="image"
+              src={images.ImageDestkop1}
+              alt="smiling woman"
+            />
           </div>
-          <div className="developer-plans">
-            <BusinessPlan details={developerPlan} />
+          <div className="content">
+            <div className="business-section__title-desktop">
+              <SectionTitle title={sectionDetails.titleDesktop} size="h2" />
+            </div>
+            <div className="business-section__title-mobile">
+              <SectionTitle title={sectionDetails.title} size="h2" />
+            </div>
+            <img
+              className="image-mobile"
+              src={images.ImageTablet}
+              alt="two people smiling"
+            />
+            <div className="business-plans">
+              {businesses.map((business) => (
+                <BusinessPlan key={business.title} details={business} />
+              ))}
+            </div>
           </div>
+        </div>
+        <div className="business-section__footer">
+          <BusinessPlan details={developerPlan} />
+          <img
+            className="desktop-image"
+            src={images.ImageDestkop2}
+            alt="man talking"
+          />
         </div>
       </div>
     </section>

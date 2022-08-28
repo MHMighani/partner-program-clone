@@ -2,6 +2,8 @@ import EmailSignupForm from "../forms/emailSignupForm";
 import SectionTitle from "../common/sectionTitle";
 import heroImage from "../../assets/businessIntro/hero-image.jpg";
 import BlobSvg from "../../assets/businessIntro/blog.svg";
+import Highlight from "../common/highlight";
+
 import "./heroSection.scss";
 
 function Stats({ number, comment }) {
@@ -32,12 +34,12 @@ function HeroSection() {
     <>
       Let's become
       <br />
-      Partners
+      <Highlight>Partners</Highlight>
     </>
   );
   return (
     <section className="section hero-section">
-      <div className="section__container section__container--xl">
+      <div className="container section__container--xl">
         <div className="decor">
           <img src={BlobSvg} alt="blob-background" />
         </div>
