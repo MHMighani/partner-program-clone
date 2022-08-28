@@ -14,6 +14,8 @@
         display: none;
     }
 
+    width: 282px;
+
     &__title {
         @include flex(row,unset,center);
         font-size: 2.4rem;
@@ -61,4 +63,19 @@
         line-height: 2.2rem;
         font-weight: 400;
     }
+}
+
+.dashboard-main-wrapper .settings-wrapper {
+    padding: 28px 52px;
+    width: 100%;
+
+    .title {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-weight: 600;
+        margin: 0;
+        
+    }
+
+    
 }
