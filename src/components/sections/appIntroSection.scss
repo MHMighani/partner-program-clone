@@ -1,0 +1,72 @@
+@use '../../styles/abstracts/' as *;
+
+.business-intro .app-intro-section {
+    @include flex(column,unset,center);
+
+    .intro{
+        text-align: center;
+        padding-top: 9.6rem;
+
+        .description {
+            font-family: 'colfax-regular';
+            @include text-p5;
+        }
+    }
+    .section__title {
+        @include text-p1;
+        margin-bottom: 3.2rem;
+    }
+}
+
+.business-intro .app-intro-card {
+    @include flex(column,space-between,center);
+    margin-bottom:4rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 0 4px 0 rgba(0,0,0,.1);
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    .intro {
+        @include flex(column,unset,flex-start);
+        padding: 4.8rem;
+
+        &__description {
+            @include text-p5;
+            font-family: 'colfax-regular';
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .logo {
+        width: 200px;
+        height: 50px;
+        margin: 0;  
+        margin-bottom: 2.4rem;
+    }
+
+    .desktop-image {
+        @include showInDesktop;
+    }
+
+    .tablet-image {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .mobile-image {
+        display: block;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}

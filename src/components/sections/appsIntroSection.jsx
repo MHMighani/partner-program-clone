@@ -1,8 +1,45 @@
 import SectionTitle from "../common/sectionTitle";
-import AppIntroCard from "../common/appIntroCard";
-import { ReactComponent as LivechatLogo } from "../../assets/businessIntro/livechat.svg";
-import { ReactComponent as ChatbotLogo } from "../../assets/businessIntro/chatbot.svg";
+import LivechatLogo from "../../assets/businessIntro/appIntroSection/livechat-logo.svg";
+import ChatbotLogo from "../../assets/businessIntro/appIntroSection/chatbot-logo.svg";
 import * as images from "../../assets/businessIntro/appIntroSection";
+
+import "./appIntroSection.scss";
+
+function AppIntroCard({ introDetails }) {
+  return (
+    <div className="app-intro-card">
+      <div className="intro">
+        <img
+          className="logo"
+          src={introDetails.logo}
+          alt={`${introDetails.name} logo`}
+        />
+
+        <p className="intro__description">{introDetails.description}</p>
+        <a href={introDetails.linkAddress} className="btn btn--dark">
+          {introDetails.linkLabel}
+        </a>
+      </div>
+      <div className="app-preview">
+        <img
+          className="desktop-image"
+          src={introDetails.desktopImage}
+          alt={introDetails.name}
+        />
+        <img
+          className="tablet-image"
+          src={introDetails.tabletImage}
+          alt={introDetails.name}
+        />
+        <img
+          className="mobile-image"
+          src={introDetails.mobileImage}
+          alt={introDetails.name}
+        />
+      </div>
+    </div>
+  );
+}
 
 function AppsIntroSection() {
   // general section details
@@ -20,7 +57,7 @@ function AppsIntroSection() {
   // chat intro-cards details
   const livechatDetails = {
     name: "livechat",
-    logo: <LivechatLogo />,
+    logo: LivechatLogo,
     description:
       "A complete customer service platform for connecting with customers and boosting sales.",
     linkLabel: "Discover LiveChat",
@@ -32,7 +69,7 @@ function AppsIntroSection() {
 
   const chatbotDetails = {
     name: "chatbot",
-    logo: <ChatbotLogo />,
+    logo: ChatbotLogo,
     description:
       "An all-in-one platform for building and launching chatbots without coding.",
     linkLabel: "Discover ChatBot",
@@ -44,14 +81,15 @@ function AppsIntroSection() {
 
   return (
     <section className="app-intro-section">
-      <div>
-        <SectionTitle title={sectionDetails.title} />
-        <p>{sectionDetails.description}</p>
+      <div className="intro container">
+        <SectionTitle title={sectionDetails.title} size="h2" />
+        <p className="description">{sectionDetails.description}</p>
       </div>
-      <div className="app-intro-cards">
+      <div className="app-intro-cards container">
         <AppIntroCard introDetails={livechatDetails} />
         <AppIntroCard introDetails={chatbotDetails} />
       </div>
+      <div className="grey-background"></div>
     </section>
   );
 }
