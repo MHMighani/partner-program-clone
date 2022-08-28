@@ -1,4 +1,5 @@
 import SectionTitle from "../common/sectionTitle";
+import Highlight from "../common/highlight";
 
 import "./partnersLogos.scss";
 
@@ -14,10 +15,12 @@ function PartnersLogos() {
   const sectionDetails = {
     title: (
       <>
-        37000 in over <br /> 150 countries grow with our products
+        <Highlight>37000</Highlight> in over <br /> 150 countries grow with our
+        products
       </>
     ),
   };
+
   // get all svg paths from the brands folder
   const reqSvgs = require.context(
     "../../assets/businessIntro/partnersLogos",
@@ -28,7 +31,7 @@ function PartnersLogos() {
 
   return (
     <section className="section partners-logos-section">
-      <div className="section__container">
+      <div className="container">
         <SectionTitle size="h3" title={sectionDetails.title} />
         <div className="partners-logos-section__logos">
           {svgs.map((svg) => (

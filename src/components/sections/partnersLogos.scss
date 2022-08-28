@@ -1,10 +1,36 @@
+@use '../../styles/abstracts/' as *;
+
 .partners-logos-section {
+    background-color: var(--grey-color);
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+
+    .section__title {
+        @include text-p4;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
     &__logos {
         display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem 2.5rem;
+
+        @include tablet {
+            grid-template-columns: repeat(4,1fr);
+            gap: 4rem 2.5rem;   
+        }
         
-        grid-template-columns: repeat(4,1fr);
-        gap: 4rem 2.5rem;
-        
+        @include desktop {
+            grid-template-columns: repeat(5,1fr);
+        }     
+
+    }
+
+    @media screen and (min-width: $tablet-screen-breakpoint) and (max-width: $desktop-screen-breakpoint) {
+        .partners-logos-section__logos>*:nth-child(n+9) {
+            display: none;
+        }        
     }
 
     .logo-container {
