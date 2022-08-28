@@ -1,6 +1,5 @@
 import QuoteSection from "../common/quoteSection";
 import QuoteImageOne from "../../assets/businessIntro/quote-1.png";
-import "./quoteOne.scss";
 
 function QuoteOne() {
   const quoteDetails = {
@@ -17,7 +16,11 @@ function QuoteOne() {
     authorDetail: "CEO at National Positions",
   };
 
-  return <QuoteSection quoteDetails={quoteDetails} />;
+  return (
+    <div className="quoteOne">
+      <QuoteSection quoteDetails={quoteDetails} />
+    </div>
+  );
 }
 
 export default QuoteOne;

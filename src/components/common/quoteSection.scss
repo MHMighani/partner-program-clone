@@ -1,17 +1,62 @@
 @use '../../styles/abstracts/' as *;
 
 .quote-section {
-    @include flex(column);
+    @include flex(column,center,center);
 }
 
 .image-container {
     display: flex;
+    flex-basis: 50%;
 
     .image {
         max-width: 44.8rem;
     }
 }
 
+.quote-container {
+    @include flex(column,center,center);
+
+    padding-top: 3.2rem;
+    padding-bottom: 6.4rem;
+
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
 .quote {
-    @include flex(column,center,center)
+    @include flex(column,center,center);
+    flex-basis: 50%;
+    margin-top: 5rem;
+
+    &__main {
+        @include text-p4;
+    }
+
+    &__footer {
+        font-size: 1.8rem;
+        padding-top: 3rem;
+        width: 100%;
+        @include flex(column,center,flex-start);
+    }
+
+    @include tablet {
+        margin-left: 3rem;
+        
+    }
+}
+
+// first quote
+.quoteOne {
+    background-color: var(--yellow-color);
+
+    @include desktop {
+        .image-container {
+            order: 2;
+        }     
+    }  
+}
+
+.quoteTwo {
+
 }
