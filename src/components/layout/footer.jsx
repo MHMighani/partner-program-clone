@@ -1,32 +1,34 @@
-import { ReactComponent as PartnerProgramsLogo } from "../../assets/partner-programs-logo.svg";
-import * as footerIcons from "../../assets/footer";
+import { ReactComponent as PartnerProgramsLogo } from "../../assets/businessIntro/partner-programs-logo.svg";
+import * as footerIcons from "../../assets/businessIntro/footer";
+
+import "./footer.scss";
 
 function FooterNavLinks({ navItems }) {
   return (
-    <>
+    <div className="nav-links">
       {navItems.map((navItem) => (
-        <div key={navItem.header}>
-          <p>{navItem.header}</p>
+        <div className="nav-item" key={navItem.header}>
+          <p className="header">{navItem.header}</p>
           <ul>
             {navItem.links.map((link) => (
-              <li key={link.label}>
+              <li className="item" key={link.label}>
                 <a href={link.address}>{link.label}</a>
               </li>
             ))}
           </ul>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
 function FooterPolicy() {
   return (
-    <div className="footer__policy">
+    <div className="footer__policy container">
       <p className="copyright">
         Copyright © 2022 LiveChat, Inc. All rights reserved
       </p>
-      <div>
+      <div className="cookies">
         <p>
           Hi! We are glad to have you here! Before you start visiting our Site,
           please note that for the best user experience, we use Cookies. By
@@ -73,25 +75,32 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <nav className="footer__nav">
-        <FooterNavLinks navItems={footerNavLinksDetails} />
-        <div className="footer__logo">
-          <PartnerProgramsLogo />
-          <a href="/" className="btn btn--red">
-            {buttonText}
+      <div className="container">
+        <nav className="footer__nav">
+          <div className="footer__logo">
+            <PartnerProgramsLogo className="logo" />
+            <a href="/" className="btn btn--red">
+              {buttonText}
+            </a>
+          </div>
+          <FooterNavLinks navItems={footerNavLinksDetails} />
+        </nav>
+        <div className="footer__contact">
+          <a href="/" className="contact-us">
+            <img src={footerIcons.MailIcon} alt="mail-icon" />
+            Contact us
           </a>
-        </div>
-      </nav>
-      <div className="footer__contact">
-        <a href="/" className="contact-us">
-          Contact us
-          <img src={footerIcons.MailIcon} alt="mail-icon" />
-        </a>
-        <div className="social-icons">
-          {/* <a href="/"></a>
-          <a href="/"></a> */}
+          <div className="social-icons">
+            <a href="/">
+              <img src={footerIcons.TwitterIcon} alt="twiiter icon" />
+            </a>
+            <a href="/">
+              <img src={footerIcons.FacebookIcon} alt="facebook icon" />
+            </a>
+          </div>
         </div>
       </div>
+
       <FooterPolicy />
     </footer>
   );

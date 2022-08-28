@@ -1,0 +1,82 @@
+$footerBackgroundColor: var(--grey-color);
+
+@use '../../styles/abstracts/' as *;
+
+.business-intro .footer {
+    background-color: $footerBackgroundColor;
+    padding-top: 4.8rem;
+    color: #5d5c69!important;
+    
+    &__contact {
+        @include flex(row,space-between,center);
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem;   
+    }
+
+    .contact-us {
+        @include flex(row,center,center);
+        white-space: nowrap;
+    }
+
+    .social-icons {
+        @include flex(row,unset,unset);
+    }
+
+    &__policy {
+        padding-top: 2.4rem !important;
+        padding-bottom: 2.4rem !important;
+    }
+
+    .cookies {
+        padding-top: 2.4rem!important;
+    }
+
+    &__logo {
+        @include flex(column,unset,unset);
+        margin-bottom: 4.8rem;
+
+        flex-basis: 50%;
+        .logo {
+            margin-right: auto;
+            margin-bottom: 3.2rem;
+        }
+        .btn {
+            width: min-content;
+        }
+
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+
+    &__nav {
+        @include flex(column,unset,unset);
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        flex-basis: 50%;
+        font-size: 1.4rem;
+    }
+}
+
+.business-intro .footer .nav-item {
+    flex-basis: 50%;
+    margin-bottom: 2.4rem;
+
+    .header {
+        font-family: 'colfax-bold';
+        color:black;
+        font-weight: 500;
+        margin-bottom: 1.6rem;
+    }
+
+    .item {
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+}
