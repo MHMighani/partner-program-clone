@@ -1,84 +1,50 @@
-import { useState } from "react";
-import * as sidebarIcons from "../../../assets/dashboard/sidebar";
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import UserMenu from "./userMenu";
+import { useLocation } from "react-router-dom";
 
 function NavList({ name, links, handleClick }) {
+  const location = useLocation();
+
   return (
     <ul className={`sidebar__list ${name}`}>
       {links.map((item) => (
-        <li
-          className={`${item.active ? "active" : ""} sidebar__item`}
-          key={item.id}
-          onClick={() => handleClick(item.id)}
-        >
-          <img className="sidebar__icon" src={item.icon} alt={item.label} />
-          {item.label}
-        </li>
+        <Link to={item.address}>
+          <li
+            className={`${
+              location.pathname == item.address ? "active" : ""
+            } sidebar__item`}
+            key={item.id}
+            onClick={() => handleClick(item.id)}
+          >
+            <img className="sidebar__icon" src={item.icon} alt={item.label} />
+            {item.label}
+          </li>
+        </Link>
       ))}
     </ul>
   );
 }
 
 function Avatar({ text }) {
+  const userMenuRef = useRef();
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
   return (
-    <div className=" sidebar__item avatar">
-      <span>{text}</span>
+    <div>
+      <div
+        onClick={() => setShowUserMenu(!showUserMenu)}
+        to="/app/account"
+        className="sidebar__item avatar"
+      >
+        <span>{text}</span>
+      </div>
+      <UserMenu show={showUserMenu} />
     </div>
   );
 }
 
-function Sidebar() {
-  const topLinks = [
-    {
-      id: "home",
-      label: "Home",
-      icon: sidebarIcons.Home,
-      active: true,
-    },
-    {
-      id: "affiliate",
-      label: "Affiliate",
-      icon: sidebarIcons.Affiliate,
-      active: false,
-    },
-    {
-      id: "solution",
-      label: "Solution",
-      icon: sidebarIcons.Solution,
-      active: false,
-    },
-    {
-      id: "developer",
-      label: "Developer",
-      icon: sidebarIcons.Developer,
-      active: false,
-    },
-    {
-      id: "balance",
-      label: "Balance",
-      icon: sidebarIcons.Balance,
-      active: false,
-    },
-    {
-      id: "partnership",
-      label: "Partnership",
-      icon: sidebarIcons.Partnership,
-      active: false,
-    },
-  ];
-
-  const bottomLinks = [
-    {
-      id: "help",
-      label: "Help",
-      icon: sidebarIcons.Help,
-    },
-    {
-      id: "notification",
-      label: "notification",
-      icon: sidebarIcons.Notification,
-    },
-  ];
-
+function Sidebar({ topLinks, bottomLinks }) {
   const [topLinksState, setTopLinksState] = useState(topLinks);
 
   function handleNavItemClick(id) {

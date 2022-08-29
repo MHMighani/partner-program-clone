@@ -9,7 +9,9 @@ function Cards({ data }) {
         <h2 className="card__title">{item.title}</h2>
         <div className="card__description">{item.description}</div>
         <div className="card__link">
-          <button className="link-button">{item.linkText}</button>
+          <button className={`link-button btn btn--${item.buttonType}`}>
+            {item.linkText}
+          </button>
         </div>
       </div>
     </div>
@@ -29,6 +31,7 @@ function Performance() {
         "Get your link or create a campaign, get new licenses, and see how they perform over time.",
       image: affiliateSvg,
       linkText: "Get link",
+      buttonType: "blue",
     },
     {
       id: "solution",
@@ -37,6 +40,7 @@ function Performance() {
         "Create and customize product accounts for your customers. Manage payments and monitor performance of your licenses.",
       image: solutionSvg,
       linkText: "Explore",
+      buttonType: "outline",
     },
   ];
 

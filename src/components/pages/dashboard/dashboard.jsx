@@ -11,8 +11,8 @@ function Dashboard() {
     <div className="dashboard-main-wrapper">
       <Navbar />
       <Switch>
-        <Route exact path="/app" component={Home} />
-        <Route path="/app/account" component={ProfileSettings} />
+        <Route path="/app/account/:form?" component={ProfileSettings} />
+        <Route path="/app/:page?" component={Home} />
       </Switch>
     </div>
   );

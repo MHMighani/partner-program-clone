@@ -1,6 +1,10 @@
+import { useParams } from "react-router-dom";
 import FormNav from "./formNav";
 import ProfileForm from "./profileForm";
-import { useParams } from "react-router-dom";
+import EmailForm from "./emailForm";
+import BillingForm from "./billingForm";
+import SecurityForm from "./securityForm";
+import TokensForm from "./tokensForm";
 
 import "./profileSettings.scss";
 
@@ -14,13 +18,20 @@ function SettingWrapper({ title, children }) {
 }
 
 function ProfileSettings() {
-  const { id } = useParams();
+  const { form } = useParams();
+
+  const forms = {
+    emails: <EmailForm />,
+    billing: <BillingForm />,
+    security: <SecurityForm />,
+    token: <TokensForm />,
+  };
 
   return (
     <div className="section profile-settings">
       <FormNav />
       <SettingWrapper title="Profile settings">
-        <ProfileForm />
+        {forms[form] || <ProfileForm />}
       </SettingWrapper>
     </div>
   );
