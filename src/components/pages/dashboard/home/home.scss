@@ -7,10 +7,10 @@
     margin: 0;
 }
 
-
-
-
 .home-section {
+    max-width: 1216px;
+    margin: 0 auto;
+
     padding-bottom: 6.4rem;
 
     @include desktop {
@@ -29,6 +29,20 @@
     gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 
+    .desktop {
+        @include showInDesktop;
+
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .mobile {
+        display: block;
+
+        @include desktop {
+            display: none !important;
+        }
+    }
+
     .program-card {
         @include flex(column,unset,unset);
         width: 100%;
@@ -36,22 +50,64 @@
         border-radius: 4px;
         background-color: rgb(255, 255, 255);
         padding: 1.5rem;
+        justify-content: space-between;
+        font-size: 1.6rem;
+
+        * {
+            padding-bottom: 1rem;
+        }
 
         .inline-list {
             @include flex(row,unset,unset);
-
             
+            .list-item {
+                padding: 0 1rem;
+                border-right: 1px solid lightgrey;
+                &:last-of-type {
+                    border:none;
+                }
+            }
         }
 
         &__title {
-            @include flex(row,space-between,center)
-            
+            @include flex(row,space-between,center);
+            font-size: 1.8rem;
+
+            @include desktop {
+                color: rgb(118, 118, 128);
+            }
         }
 
         .right-arrow {
             width: 24px;
             height: 24px;
             margin: 0;
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        &.affiliate .mobile {
+            @include flex(column);
+            .btn {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+
+        &.balance  {
+            .values {
+                
+                @include flex(column,center,flex-start);
+
+                @include desktop {
+                    @include flex(row,space-around,center);
+                }
+            }
+            .balance-value{
+                font-size: 2.4rem;
+            }
         }
     }
 }
@@ -150,5 +206,140 @@
             text-align: left;
             padding-top: .6rem;
         }
+
+        @include desktop {
+            width: 328px;
+        }
+    }
+
+    
+}
+
+.home-section .explorer-desktop {
+    .header {
+        @include flex(row,space-between,center);
+
+        .title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+
+        .toggle-btn {
+            @include flex(row,center,center);
+            margin-left: auto;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            cursor: pointer;
+            transition: color .3s;
+        }
+    }
+
+    .side-item {
+        @include flex(row,flex-start,center);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all .3s;
+        padding: .6rem 2.2rem .6rem 1.8rem;
+        width: 100%;
+        &:hover {
+            background: #f6f6f7;
+        }
+    }
+
+    .box {
+        display: flex;
+        height: 302px;
+        background: #fff;
+        border: 1px solid #dde2e6;
+        margin-bottom: 18px;
+        position: relative;
+        border-radius: 4px;
+    }
+
+    .side {
+        @include flex(column,space-evenly,flex-start);
+        width: 360px;
+        border-right: 1px solid #dde2e6;
+    }
+
+    .checkbox {
+        background: #fff;
+        margin-right: 13px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #cfd3d5;
+        border-radius: 3px;
+    }
+
+}
+
+.explorer-desktop .main {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+
+        .image {
+            width: 117px;
+            height: 113px;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            
+        }
+
+        .description {
+            max-width: 444px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 22px;
+            margin: 1rem 0 1.6rem;
+        }
+}
+
+.explorer-mobile {
+    &__modal {
+        position: fixed;
+        top:0;
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    &__closeBtn {
+        position: absolute;
+        font-size: 4rem;
+        right: 3rem;
+        top: 1.5rem;
+    }    
+
+    &__body {
+        @include flex(column,center,center);
+        padding-top: 5rem;
+    }
+}
+
+.explorer-mobile__modal .card {
+    @include flex(column,center,center);
+
+    * {
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    &__image {
+        width: 115px;
+        height: 120px;
     }
 }
