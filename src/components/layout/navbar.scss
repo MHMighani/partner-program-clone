@@ -33,6 +33,17 @@ $nav-item-padding-mobile: 2rem 2.4rem;
         display: none;
     }
 
+    &__logo {
+        @include desktop {
+            .image{
+                height: 33px;
+                width: auto;
+    
+            }    
+        }
+        
+    }
+
     @include desktop{
         height: $navbar-height-desktop;
 
@@ -81,7 +92,6 @@ $nav-item-padding-mobile: 2rem 2.4rem;
                 .nav-item__label{
                     color: grey;
                 }
-                
             }
         }
     }

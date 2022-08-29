@@ -1,4 +1,4 @@
-import { ReactComponent as Chevron } from "../../assets/chevron.svg";
+import { ReactComponent as Chevron } from "../../assets/businessIntro/chevron.svg";
 
 function SubMenu({ subItems, label }) {
   return (

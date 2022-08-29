@@ -2,6 +2,23 @@
 
 .business-intro .partners-section {
     @include flex(column,center,center);
+    position: relative;
+
+    .decor-item {
+        
+        top: 0;
+        bottom: auto;
+
+        &.left {
+            left: 0;
+            right: auto;
+        }
+
+        &.right {
+            left: auto;
+            right: 0;
+        }
+    }
 
     .section__intro {
         @include flex(column,unset,unset);
@@ -26,17 +43,35 @@
     .desktop-image {
         @include showInTabletBigger;
     }
-
     
     &__plans {
+        position: relative;
         padding-top: 16rem;
         padding-bottom: 5rem;
         width: 100%;
         @include flex(column,center,center);
         background-color: var(--grey-color);
 
-
+        .decor-item {
+            @include showInDesktop;
+        }
+    
+        .decor-item.left {
+            top: auto;
+            bottom: 0;
+            right: auto;
+            left: 0;
+        }
+    
+        .decor-item.right {
+            top: 0;
+            bottom: auto;
+            right:0;
+            left: auto;
+        }
     }
+
+    
 
     .plan-items {
         @include flex(column,center,flex-start);
@@ -45,6 +80,11 @@
             flex-direction: row;
         }
 
+    }
+
+    &__link {
+        margin-top: 5rem;
+        text-align: center;
     }
 
     &__plan {

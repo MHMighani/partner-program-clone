@@ -11,7 +11,6 @@ function NavMenu({ navMenuItems }) {
 
   function handleNavItemClick(e) {
     setIsOpen(!isOpen);
-    e.currentTarget.classList.toggle("active");
     toggleClass(e.currentTarget, "active");
   }
 

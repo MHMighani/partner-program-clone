@@ -2,13 +2,109 @@
 
 .business-section {
     background-color: var(--grey-color);
+    position: relative;
+
+    padding-top:4.8rem;
+
+    padding-bottom: 6.4rem;
+
+    .decor-item {
+        top: auto;
+        left: auto;
+        bottom: 0;
+        right: 0;
+        transform: translateY(-120%);
+    }
+
+    .decor {
+        @include showInDesktop;
+    }
+
+    .section__title {
+        @include text-p2;
+    }
+
+    @include desktop {
+        padding-top: 9.6rem;
+        paddin-bottom: 6.4rem;
+    }
+
+    .section__container {
+        flex-direction: column;
+    }
+
+    .decor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    .image-wrapper.desktop {
+        @include showInDesktop;
+        
+        flex-basis: 33.33%;
+    }
+
+    &__body {
+        margin-bottom: 4rem;
+        @include desktop {
+            @include flex(row,flex-end,unset)
+        }
+
+        .content {
+            @include desktop {
+                padding-left: 9.6rem;
+            }
+            flex-basis: 66.66%;
+        }
+    }
+
+    .desktop-image {
+        @include showInDesktop;
+    }
+
+    &__title-desktop {
+        @include showInDesktop;
+    }
+
+    &__title-mobile {
+        @include hideInDesktop;
+    }
+
+    .image-mobile {
+        @include hideInDesktop;
+    }
 
     &__plans {
         @include flex(column,center,flex-start);
     }
 }
 
+.business-section__footer {
+    @include desktop {
+        display: flex;
+
+        .plan-container {
+            display: flex;
+            flex-basis: 66.66%;
+            padding-left: 6rem;
+        }
+        
+        .desktop-image {
+            order:-1;
+            flex-basis: 33.33%;
+        }
+
+        .business-plan{
+            flex-basis: 50%;
+        }
+    }
+}
+
 .business-plans {
+    flex-basis: 66%;
+    padding-top: 3rem;
     @include flex(column,center,flex-start);
 
     @include tablet {
@@ -17,9 +113,22 @@
 }
 
 .business-plan {
+    @include flex(column,flex-start,flex-start);
+    margin-bottom: 3rem;
+    
+    flex-basis: 50%;
+
     &__description {
         font-size: 1.8rem;
         font-weight: 400;
         margin-bottom: 3.2rem;
+    }
+
+    &__title {
+        @include text-p4;
+    }
+
+    .developer-plan__link {
+        @include flex(row,center,center);
     }
 }

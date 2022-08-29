@@ -1,9 +1,9 @@
 import { useState } from "react";
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
-import NavLogo from "../../assets/partner-programs-logo.svg";
-import { ReactComponent as LivechatLogo } from "../../assets/livechat.svg";
-import { ReactComponent as ChatbotLogo } from "../../assets/chatbot.svg";
+import NavLogo from "../../assets/businessIntro/partner-programs-logo.svg";
+import { ReactComponent as LivechatLogo } from "../../assets/businessIntro/livechat.svg";
+import { ReactComponent as ChatbotLogo } from "../../assets/businessIntro/chatbot.svg";
 import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
 
 import "./navbar.scss";
@@ -11,7 +11,7 @@ import "./navbar.scss";
 function NavbarLogo() {
   return (
     <a href="/" className="navbar__logo">
-      <img src={NavLogo} alt="" />
+      <img className="image" src={NavLogo} alt="partner program logo" />
     </a>
   );
 }
@@ -36,6 +36,7 @@ function Navbar() {
       ChatBot
     </>
   );
+
   const navMenuItems = [
     {
       id: "partnerships",

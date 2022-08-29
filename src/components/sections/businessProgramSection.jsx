@@ -72,10 +72,10 @@ function BusinessProgramSection() {
 
   return (
     <section className="section business-section">
-      <div className="section__container">
-        {/* <div className="decor">
-          <img src={images.BlobSvg} alt="blob" />
-        </div> */}
+      <div className="container container--xl">
+        <div className="decor">
+          <img className="decor-item" src={images.BlobSvg} alt="blob" />
+        </div>
         <div className="business-section__body">
           <div className="image-wrapper desktop">
             <img
@@ -104,12 +104,12 @@ function BusinessProgramSection() {
           </div>
         </div>
         <div className="business-section__footer">
-          <BusinessPlan details={developerPlan} />
-          <img
-            className="desktop-image"
-            src={images.ImageDestkop2}
-            alt="man talking"
-          />
+          <div className="plan-container">
+            <BusinessPlan details={developerPlan} />
+          </div>
+          <div className="desktop-image">
+            <img src={images.ImageDestkop2} alt="man talking" />
+          </div>
         </div>
       </div>
     </section>

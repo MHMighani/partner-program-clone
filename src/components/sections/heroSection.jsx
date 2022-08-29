@@ -1,7 +1,7 @@
 import EmailSignupForm from "../forms/emailSignupForm";
 import SectionTitle from "../common/sectionTitle";
 import heroImage from "../../assets/businessIntro/hero-image.jpg";
-import BlobSvg from "../../assets/businessIntro/blog.svg";
+import BlobSvg from "../../assets/businessIntro/hero-blog.svg";
 import Highlight from "../common/highlight";
 
 import "./heroSection.scss";
@@ -39,9 +39,9 @@ function HeroSection() {
   );
   return (
     <section className="section hero-section">
-      <div className="container section__container--xl">
+      <div className="container container--xl">
         <div className="decor">
-          <img src={BlobSvg} alt="blob-background" />
+          <img className="decor-item" src={BlobSvg} alt="blob-background" />
         </div>
         <div className="hero-section__intro">
           <SectionTitle title={title} />
@@ -53,8 +53,8 @@ function HeroSection() {
 
           <EmailSignupForm submitBtnText="Join Partner Program" />
           <div className="hero-section__stats">
-            <Stats number="37,000" comment="businesses using our products" />
-            <Stats number="1,500" comment="active Partners" />
+            <Stats number="37,000+" comment="businesses using our products" />
+            <Stats number="1,500+" comment="active Partners" />
           </div>
         </div>
         <div className="hero-image">

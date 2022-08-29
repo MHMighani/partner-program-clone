@@ -1,23 +1,47 @@
 @use '../../styles/abstracts' as *;
 
 .hero-section{
-    @include flex();
     padding-top: 4.8rem;
+    position: relative;
+
+    .container {
+        @include flex(column,center,center);
+
+        @include desktop {
+            @include flex(row,space-between,center);
+        }
+    }
+
 
     .section__title {
-        text-align: center;
+        @include text-p1;
+        
     }
     
-    .decor{
-        transform: translate(-100%);
-        position: absolute;
-        top: 0;
+    .section__title,&__description {
+        text-align: center;
+        
+        &__desktop {
+            text-align: left;
+        }
+    }
+
+    .decor-item {
+        right: auto;
+        left: 0;
+        transform: translateX(-60%);
+
+        display: none;
+        
+        @include largeDesktop {
+            display: block;
+        }
     }
 
     &__description {
+        @include text-p4;
+        font-family: 'colfax-regular';
         font-weight: 400;
-        font-size: 2.4rem;
-        text-align: center;
         max-width: 54.4rem;
         margin-bottom: 4.8rem;
         margin-left: auto;
@@ -45,6 +69,7 @@
 
             .email-input {
                 margin-bottom: 0;
+                margin-right: 1.5rem;
             }
         }
     }
@@ -70,6 +95,12 @@
         margin-bottom: 1.8rem
     }
 
+    &__number {
+        @include text-p4;
+        font-weight: 700;
+        
+    }
+
     @include desktop {
         text-align: left;
     }
@@ -79,11 +110,19 @@
     position: relative;
 
     &__description {
+        font-size: 1.2rem;
         @include flex(column,$alignItems:flex-start);
         position: absolute;
         flex-wrap: wrap;
         padding: .8rem 1.2rem;
+        bottom: 3rem;
+        left: 4rem;
         background-color: var(--grey-color);
+
+        @include tablet {
+            bottom: 5rem;
+            left: 8rem;
+        }
     }
 
     &__link {

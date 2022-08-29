@@ -4,6 +4,10 @@ import Highlight from "../common/highlight";
 
 import partnersMobileImage from "../../assets/businessIntro/partnersSection/partners-mobile.png";
 import partnersDesktopImage from "../../assets/businessIntro/partnersSection/partners-desktop.png";
+import blobBottomLeft from "../../assets/businessIntro/partnersSection/blob-bottom-left.svg";
+import blobBottomRight from "../../assets/businessIntro/partnersSection/blob-bottom-right.svg";
+import blobTopRight from "../../assets/businessIntro/partnersSection/blob-top-right.svg";
+import blobTopLeft from "../../assets/businessIntro/partnersSection/blob-top-left.svg";
 
 import "./partnersSection.scss";
 
@@ -63,6 +67,14 @@ function PartnersSection() {
   return (
     <section className="section partners-section">
       <div className="container">
+        <div className="decor">
+          <img className="decor-item left" src={blobTopLeft} alt="blob decor" />
+          <img
+            className="decor-item right"
+            src={blobTopRight}
+            alt="blob decor"
+          />
+        </div>
         <div className="section__intro">
           <div>
             <SectionTitle size="h2" title={sectionDetails.title} />
@@ -87,6 +99,18 @@ function PartnersSection() {
       <SectionSeperator previousColor="#fff" nextColor="#f6f6f7" />
       <div className=" partners-section__plans">
         <div className="container">
+          <div className="decor">
+            <img
+              src={blobBottomRight}
+              className="decor-item right"
+              alt="blob decor"
+            />
+            <img
+              src={blobBottomLeft}
+              className="decor-item left"
+              alt="blob decor"
+            />
+          </div>
           <div className="plan-items">
             {plans.map((plan) => (
               <Plan key={plan.title} details={plan} />
