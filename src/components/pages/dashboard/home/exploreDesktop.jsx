@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function LeftCard({ data = [], handler }) {
   return (
@@ -46,7 +47,15 @@ function ExploreDesktop({ data }) {
       <div className="header">
         <div className="title">{details.title}</div>
         <div className="toggle-btn" onClick={() => setIshidden(!isHidden)}>
-          {isHidden ? "Show" : "Hide"}
+          {isHidden ? (
+            <>
+              Show <FaChevronDown />
+            </>
+          ) : (
+            <>
+              Hide <FaChevronUp />
+            </>
+          )}
         </div>
       </div>
       {!isHidden && (
