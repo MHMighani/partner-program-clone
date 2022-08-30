@@ -11,15 +11,29 @@ $footerBackgroundColor: var(--grey-color);
         @include flex(row,space-between,center);
         padding-top: 2.4rem;
         padding-bottom: 2.4rem;   
+        border-bottom: 1px solid #d4d4d7;
     }
 
     .contact-us {
         @include flex(row,center,center);
         white-space: nowrap;
+        font-size: 1.5rem;
+
+        .icon {
+            margin-right: 1rem;
+        }
     }
 
     .social-icons {
         @include flex(row,unset,unset);
+
+        .icon {
+            margin-right: 1rem;
+            &:hover{
+                color:black;
+            }
+        }
+        
     }
 
     &__policy {

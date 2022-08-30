@@ -1,5 +1,8 @@
 import { ReactComponent as PartnerProgramsLogo } from "../../assets/businessIntro/partner-programs-logo.svg";
-import * as footerIcons from "../../assets/businessIntro/footer";
+
+import mailIcon from "../../assets/businessIntro/footer/mail.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/businessIntro/footer/twitter.svg";
+import { ReactComponent as FacebookIcon } from "../../assets/businessIntro/footer/facebook.svg";
 
 import "./footer.scss";
 
@@ -87,15 +90,15 @@ function Footer() {
         </nav>
         <div className="footer__contact">
           <a href="/" className="contact-us">
-            <img src={footerIcons.MailIcon} alt="mail-icon" />
+            <img className="icon" src={mailIcon} alt="mail-icon" />
             Contact us
           </a>
           <div className="social-icons">
-            <a href="/">
-              <img src={footerIcons.TwitterIcon} alt="twiiter icon" />
+            <a className="icon" href="/">
+              <TwitterIcon />
             </a>
-            <a href="/">
-              <img src={footerIcons.FacebookIcon} alt="facebook icon" />
+            <a className="icon" href="/">
+              <FacebookIcon />
             </a>
           </div>
         </div>
