@@ -1,5 +1,5 @@
 import Popup from "reactjs-popup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Dots from "react-carousel-dots";
 
 function ExploreTrigger() {
@@ -16,9 +16,21 @@ function ExplorerModal({ item, selected, handleNext }) {
         <b>{item.contentTitle}</b>
         <img className="card__image" src={item.image} alt={item.title} />
         <p className="card__description">{item.description}</p>
-        <button onClick={handleNext} className="btn btn--blue">
+
+        <button onClick={item.first && handleNext} className="btn btn--blue">
           {item.linkText}
         </button>
+
+        {!item.first && !item.last && (
+          <button onClick={handleNext} className="btn btn--outline">
+            next
+          </button>
+        )}
+
+        {/* last item onboarding button */}
+        {item.last && (
+          <button className="btn btn--outline">Finish onboarding</button>
+        )}
       </div>
     </div>
   );

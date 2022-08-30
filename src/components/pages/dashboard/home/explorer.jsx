@@ -19,6 +19,7 @@ const data = [
     description:
       " Explore the application and start growing your business with LiveChat Partner Program. ",
     linkText: "Let’s get started",
+    first: true,
     image: explorer1,
     checked: true,
     disabled: true,
