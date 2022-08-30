@@ -9,6 +9,7 @@ import explorer4 from "../../../../assets/dashboard/home/explorer-4.png";
 import explorer5 from "../../../../assets/dashboard/home/explorer-5.png";
 import explorer6 from "../../../../assets/dashboard/home/explorer-6.png";
 import finished from "../../../../assets/dashboard/home/finished.png";
+import { useState } from "react";
 
 const data = [
   {
@@ -19,7 +20,8 @@ const data = [
       " Explore the application and start growing your business with LiveChat Partner Program. ",
     linkText: "Let’s get started",
     image: explorer1,
-    checked: false,
+    checked: true,
+    disabled: true,
   },
   {
     id: "discover",
@@ -30,6 +32,7 @@ const data = [
     linkText: "See our products",
     image: explorer2,
     checked: false,
+    disabled: false,
   },
   {
     id: "links",
@@ -40,6 +43,7 @@ const data = [
     linkText: "Get link",
     image: explorer3,
     checked: false,
+    disabled: false,
   },
   {
     id: "uptodate",
@@ -50,6 +54,7 @@ const data = [
     linkText: "Watch video",
     image: explorer4,
     checked: false,
+    disabled: false,
   },
   {
     id: "solution",
@@ -60,6 +65,7 @@ const data = [
     linkText: "Apply",
     image: explorer5,
     checked: false,
+    disabled: false,
   },
   {
     id: "license",
@@ -71,31 +77,45 @@ const data = [
     last: true,
     image: explorer6,
     checked: false,
+    disabled: false,
+  },
+  {
+    id: "congrats",
+    listTitle: "Congrats!",
+    contentTitle: "Congrats! You know the App inside out!",
+    description: (
+      <>
+        Got any questions?
+        <br />
+        Chat with support or shoot us email.
+      </>
+    ),
+    linkText: "Finish onboarding",
+    last: true,
+    image: finished,
   },
 ];
 
-const congratsCardData = {
-  id: "congrats",
-  listTitle: "Congrats!",
-  contentTitle: "Congrats! You know the App inside out!",
-  description: (
-    <>
-      Got any questions?
-      <br />
-      Chat with support or shoot us email.
-    </>
-  ),
-  linkText: "Finish onboarding",
-  last: false,
-  image: finished,
-};
-
 function Explorer() {
+  const [exploreData, setExploreData] = useState(data);
+
   const isDesktop = useIsDesktop();
+
+  const handleCheckItem = (id) => {
+    setExploreData((exploreData) =>
+      exploreData.map((item) => {
+        if (item.id === id) {
+          return { ...item, checked: !item.checked };
+        }
+        return { ...item };
+      })
+    );
+  };
+
   return isDesktop ? (
-    <ExploreDesktop data={data} />
+    <ExploreDesktop handleCheckItem={handleCheckItem} data={exploreData} />
   ) : (
-    <ExplorerMobile data={data} />
+    <ExplorerMobile data={exploreData} />
   );
 }
 
