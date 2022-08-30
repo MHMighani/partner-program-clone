@@ -1,7 +1,11 @@
 @use '../../../styles/abstracts/' as *;
 
 .dashboard-main-wrapper {
+    font-family: 'colfax-regular';
+    padding-top: 6rem;
+
     @include desktop {
+        padding-top: 0;
         display: flex;
         height: 100%;
 
@@ -12,10 +16,8 @@
         }
     }
     
-
     .section {
         display: flex;
-        
     }
 }
 
@@ -23,19 +25,15 @@
 .dashboard-main-wrapper input {
     width: 100%;
     height: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-color: rgb(201, 201, 205) !important;
 
     background: #fff;
-    border: 1px solid #e3eaed!important;
-    padding: 7px;
-    border-radius: 4px;
+    border: 1px solid #e3eaed;
 
-    border: 1px solid #bcc6d0;
     border-radius: 4px;
     line-height: 1.2;
-    padding: 8px 10px;
     font-size: 15px;
     color: #424d57;
     box-sizing: border-box;
@@ -46,5 +44,21 @@
     &:focus {
         box-shadow: none;
         border-color: rgb(0, 102, 255) !important;
+    }
+
+    &.--error {
+        border-color: red !important;
+    }
+
+    
+
+    &[type="checkbox"],&[type="radio"] {
+            background: #fff;
+            margin-right: 13px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #cfd3d5;
+            border-radius: 3px;
+        
     }
 }

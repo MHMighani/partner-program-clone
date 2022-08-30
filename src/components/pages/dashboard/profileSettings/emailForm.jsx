@@ -15,18 +15,18 @@ function EmailForm() {
   ];
 
   return (
-    <div>
+    <div className="email-form">
       <div>
         {data.map((item) => {
           return (
-            <div>
+            <div className="checkbox-form">
               <input type="checkbox" />
-              <div>{item.label}</div>
+              <label className="label">{item.label}</label>
             </div>
           );
         })}
       </div>
-      <button className="btn btn--blue">Save</button>
+      <button className="btn btn--blue btn--blue--disabled">Save</button>
     </div>
   );
 }

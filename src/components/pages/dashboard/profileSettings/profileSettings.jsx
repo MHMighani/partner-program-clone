@@ -18,7 +18,7 @@ function SettingWrapper({ title, children }) {
 }
 
 function ProfileSettings() {
-  const { form } = useParams();
+  let { form } = useParams();
 
   const forms = {
     emails: <EmailForm />,
@@ -27,12 +27,22 @@ function ProfileSettings() {
     token: <TokensForm />,
   };
 
+  const titles = {
+    emails: "Email preferences",
+    billing: "Biling",
+    profile: "Profile details",
+    security: "Security",
+    token: "API tokens",
+  };
+
+  // if params is not in forms keys then profile will be selected
+  const component = forms[form] || <ProfileForm />;
+  const title = forms[form] ? titles[form] : titles["profile"];
+
   return (
     <div className="section profile-settings">
       <FormNav />
-      <SettingWrapper title="Profile settings">
-        {forms[form] || <ProfileForm />}
-      </SettingWrapper>
+      <SettingWrapper title={title}>{component}</SettingWrapper>
     </div>
   );
 }

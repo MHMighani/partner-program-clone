@@ -1,46 +1,128 @@
+import { useForm } from "react-hook-form";
+import Select from "react-select";
+import Input from "../../../common/input";
+
 function BillingForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onBlur" });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  const selectorOptions = [
+    { value: "country-1", label: "country-1" },
+    { value: "country-2", label: "country-2" },
+    { value: "country-3", label: "country-3" },
+  ];
   return (
     <div className="billing-form">
       <div className="title">Payment information</div>
       <div className="seperator"></div>
-      <div className="paypal">
-        <div>Your PayPal address </div>
-      </div>
-      <div className="title">Invoicing Details</div>
-      <div className="seperator"></div>
-      <div className="text-gray">
-        This data will be used for invoicing, whenever you want to withdraw
-        money from Partner Program.
-      </div>
-      <div>
-        <div>
-          <label htmlFor=""> Company name / Full name</label>
-          <input type="text" id="companyName" />
-        </div>
-        <div>
-          <label htmlFor="address">Address</label>
-          <input type="text" id="address" />
-        </div>
-        <div>
-          <div>
-            <label htmlFor="vatId">VAT ID (optional)</label>
-            <input type="text" id="vatId" />
+      <div className="container">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="paypal">
+            <Input
+              errors={errors}
+              label="Your PayPal address"
+              id="paypal"
+              name="paypal"
+              register={register}
+            />
+
+            <span className="text-gray">
+              This data will be used for invoicing, whenever you want to
+              withdraw money from Partner Program.
+            </span>
+          </div>
+          <div className="title">Invoicing Details</div>
+          <div className="seperator"></div>
+          <div className="text-gray">
+            This data will be used for invoicing, whenever you want to withdraw
+            money from Partner Program.
+          </div>
+          <div className="form-row radio-forms">
+            <span className="label">Account type:</span>
+            <div className="radio-wrapper">
+              <input type="radio" name="individual" id="individual-radio" />
+              <label htmlFor="individual" className="label">
+                individual
+              </label>
+            </div>
+            <div className="radio-wrapper">
+              <input type="radio" name="business" id="business-radio" />
+              <label htmlFor="business" className="label">
+                Business
+              </label>
+            </div>
           </div>
           <div>
-            <label htmlFor="city">City</label>
-            <input type="text" id="city" />
+            <div className="form-row">
+              <Input
+                label="Company name / Full name"
+                name="companyName"
+                id="companyName"
+                register={register}
+                errors={errors}
+              />
+
+              <div className="country-select">
+                <Select options={selectorOptions} />
+              </div>
+            </div>
+
+            <Input
+              name="address"
+              label="Address"
+              errors={errors}
+              register={register}
+              id="address"
+            />
+
+            <div className="form-row">
+              <Input
+                name="vatId"
+                label="VAT ID (optional)"
+                id="vatId"
+                errors={errors}
+                register={register}
+              />
+
+              <Input
+                name="city"
+                label="City"
+                id="city"
+                errors={errors}
+                register={register}
+              />
+            </div>
+            <div className="form-row">
+              <Input
+                name="state"
+                errors={errors}
+                register={register}
+                label="City"
+                id="state"
+              />
+
+              <Input
+                name="zipCode"
+                errors={errors}
+                register={register}
+                id="zipCode"
+                label="Zip code (optional)"
+              />
+            </div>
+            <div>
+              <button className="btn btn--blue btn--blue--disabled">
+                All Saved
+              </button>
+            </div>
           </div>
-        </div>
-        <div>
-          <div>
-            <label htmlFor="state">State (optional)</label>
-            <input type="text" id="state" />
-          </div>
-          <div>
-            <label htmlFor="zipCode">Zip code (optional)</label>
-            <input type="text" id="zipCode" />
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
