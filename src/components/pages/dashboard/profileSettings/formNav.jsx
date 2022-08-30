@@ -1,31 +1,35 @@
 import { useParams, Link } from "react-router-dom";
-import * as images from "../../../../assets/dashboard/profile-settings";
+import { ReactComponent as ProfileSvg } from "../../../../assets/dashboard/profile-settings/profile.svg";
+import { ReactComponent as EmailSvg } from "../../../../assets/dashboard/profile-settings/email.svg";
+import { ReactComponent as SecuritySvg } from "../../../../assets/dashboard/profile-settings/security.svg";
+import { ReactComponent as TokenSvg } from "../../../../assets/dashboard/profile-settings/token.svg";
+import { ReactComponent as BillingSvg } from "../../../../assets/dashboard/profile-settings/billing.svg";
 
 const navItemData = [
   {
     id: "profile",
     label: "profile details",
-    image: images.profile,
+    image: ProfileSvg,
   },
   {
     id: "billing",
     label: "Billing",
-    image: images.billing,
+    image: BillingSvg,
   },
   {
-    id: "email",
+    id: "emails",
     label: "Email preferences",
-    image: images.email,
+    image: EmailSvg,
   },
   {
     id: "security",
     label: "security",
-    image: images.security,
+    image: SecuritySvg,
   },
   {
     id: "token",
     label: "API tokens",
-    image: images.token,
+    image: TokenSvg,
   },
 ];
 
@@ -41,12 +45,16 @@ function FormNav() {
         {navItemData.map((item) => {
           return (
             <Link
-              to={item.id}
+              to={`/app/account/${item.id}`}
               key={item.id}
               className={`${item.id === form ? "active" : ""} form-nav__item`}
             >
-              <img className="item-icon" src={item.image} alt={item.label} />
+              {/* <img className="item-icon" src={item.image} alt={item.label} /> */}
 
+              <item.image
+                className="item-icon"
+                stroke={item.id === form ? "blue" : "grey"}
+              />
               <span className="item-label">{item.label}</span>
             </Link>
           );
