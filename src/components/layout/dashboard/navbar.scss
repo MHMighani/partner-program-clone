@@ -76,8 +76,11 @@ $sidebarTextColor: #c9c9cd;
     right: 0;
     left: 0;
     top: 0;
-    height: 100%;
     z-index: 10;
+
+    &.open {
+        height: 100%;
+    }
 }
 
 .dashboard-main-wrapper .nav-mobile {
@@ -86,13 +89,15 @@ $sidebarTextColor: #c9c9cd;
     background: $navbarBackground;
     color: #c9c9cd;
 
+    .hamburger-btn__text {
+        display: none;
+    }
+
     .logo {
         margin: 0;
         margin-right: auto;
         width: auto;
     }
-
-    
 }
 
 .nav-mobile-wrapper .nav-menu {
@@ -103,7 +108,7 @@ $sidebarTextColor: #c9c9cd;
 
     &__item {
         color: #fff;
-        background: #29292f;
+        background: inherit;
         border-left: 3px solid #06f;
 
         @include flex(row,space-between,center);
@@ -115,6 +120,12 @@ $sidebarTextColor: #c9c9cd;
         border-left: 3px solid transparent;
         cursor: pointer;
         transition: all .3s;
+
+        &.active {
+            border-left: 5px solid blue;
+            background: #29292f;
+
+        }
     }
 }
 

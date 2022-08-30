@@ -11,7 +11,6 @@ const topLinks = [
     id: "home",
     label: "Home",
     icon: sidebarIcons.Home,
-    // active: true,
     address: "/app",
   },
   {
