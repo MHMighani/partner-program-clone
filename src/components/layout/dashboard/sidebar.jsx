@@ -1,7 +1,7 @@
-import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import UserMenu from "./userMenu";
-import { useLocation } from "react-router-dom";
+import Popup from "reactjs-popup";
 
 function NavList({ name, links, handleClick }) {
   const location = useLocation();
@@ -9,12 +9,11 @@ function NavList({ name, links, handleClick }) {
   return (
     <ul className={`sidebar__list ${name}`}>
       {links.map((item) => (
-        <Link to={item.address}>
+        <Link key={item.id} to={item.address}>
           <li
             className={`${
               location.pathname == item.address ? "active" : ""
             } sidebar__item`}
-            key={item.id}
             onClick={() => handleClick(item.id)}
           >
             <img className="sidebar__icon" src={item.icon} alt={item.label} />
@@ -27,19 +26,19 @@ function NavList({ name, links, handleClick }) {
 }
 
 function Avatar({ text }) {
-  const userMenuRef = useRef();
-  const [showUserMenu, setShowUserMenu] = useState(false);
-
   return (
     <div>
-      <div
-        onClick={() => setShowUserMenu(!showUserMenu)}
-        to="/app/account"
-        className="sidebar__item avatar"
+      <Popup
+        trigger={
+          <div className="sidebar__item avatar">
+            <span>{text}</span>
+          </div>
+        }
+        on="click"
+        position="right bottom"
       >
-        <span>{text}</span>
-      </div>
-      <UserMenu show={showUserMenu} />
+        <UserMenu />
+      </Popup>
     </div>
   );
 }

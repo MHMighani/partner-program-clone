@@ -10,7 +10,7 @@ function InlineList() {
   return (
     <div className="inline-list">
       {itemList.map((item) => (
-        <div className="list-item">
+        <div key={item.label} className="list-item">
           <span>{item.amount}</span>
           {item.label}
         </div>

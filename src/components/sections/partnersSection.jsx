@@ -13,6 +13,7 @@ import "./partnersSection.scss";
 
 const plans = [
   {
+    id: "plan1",
     title: (
       <>
         Strengthen your <br /> online presence
@@ -22,6 +23,7 @@ const plans = [
       "By offering reliable products, you reinforce your brand and gain the credibility you need to attract more customers.",
   },
   {
+    id: "plan2",
     title: (
       <>
         Discover new <br /> revenue streams
@@ -31,6 +33,7 @@ const plans = [
       "Opening up to the online communication industry will help you to create additional product and service offerings.",
   },
   {
+    id: "plan3",
     title: (
       <>
         Grow your <br /> customer base
@@ -68,9 +71,13 @@ function PartnersSection() {
     <section className="section partners-section">
       <div className="container">
         <div className="decor">
-          <img className="decor-item left" src={blobTopLeft} alt="blob decor" />
           <img
-            className="decor-item right"
+            className="decor__item decor__item--left"
+            src={blobTopLeft}
+            alt="blob decor"
+          />
+          <img
+            className="decor__item decor__item--right"
             src={blobTopRight}
             alt="blob decor"
           />
@@ -102,18 +109,18 @@ function PartnersSection() {
           <div className="decor">
             <img
               src={blobBottomRight}
-              className="decor-item right"
+              className="decor__item decor__item--right"
               alt="blob decor"
             />
             <img
               src={blobBottomLeft}
-              className="decor-item left"
+              className="decor__item decor__item--left"
               alt="blob decor"
             />
           </div>
           <div className="plan-items">
             {plans.map((plan) => (
-              <Plan key={plan.title} details={plan} />
+              <Plan key={plan.id} details={plan} />
             ))}
           </div>
           <div className="partners-section__link">
