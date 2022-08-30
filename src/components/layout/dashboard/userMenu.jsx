@@ -6,12 +6,15 @@ const menuItems = [
   {
     id: "user",
     content: (
-      <>
+      <Link to="/app/account" className="general">
         <div className="avatar"></div>
-        <div className="text"></div>
-      </>
+        <div>
+          <div className="user-name">user's name</div>
+          <div className="user-email">user's email</div>
+        </div>
+      </Link>
     ),
-    address: "/",
+    address: "/app",
   },
   {
     id: "profile",
@@ -21,30 +24,28 @@ const menuItems = [
   {
     id: "balance",
     content: <span>Balance</span>,
-    address: "/",
+    address: "/app",
   },
   {
     id: "logout",
     content: <span>Log out</span>,
-    address: "/",
+    address: "/app",
   },
 ];
 
-function UserMenu({ show }) {
+function UserMenu() {
   return (
-    show && (
-      <div className="userMenu">
-        <ul className="userMenu__list">
-          {menuItems.map((item) => {
-            return (
-              <Link to={item.address} className="userMenu__item" key={item.id}>
-                {item.content}
-              </Link>
-            );
-          })}
-        </ul>
-      </div>
-    )
+    <div className="userMenu">
+      <ul className="userMenu__list">
+        {menuItems.map((item) => {
+          return (
+            <Link to={item.address} className="userMenu__item" key={item.id}>
+              {item.content}
+            </Link>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
