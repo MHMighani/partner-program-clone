@@ -18,17 +18,20 @@ function Partnership() {
   const cards = [
     {
       id: "programs summary",
-      description: "description 1",
+      description:
+        "Discover our Programs and gain new functionalities within the app.",
       image: ProgramsSummaryImage,
     },
     {
       id: "access directory",
-      description: "description 2",
+      description:
+        "Check our educational materials and make the most of our Partner Program.NEW!",
       image: accessDirectoryImage,
     },
     {
       id: "programs benefits",
-      description: "description 3",
+      description:
+        "Claim your programs’ benefits and discover new business opportunities.",
       image: ProgramsBenefitsImage,
     },
   ];

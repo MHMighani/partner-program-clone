@@ -12,7 +12,7 @@ function Dashboard() {
       <Navbar />
       <Switch>
         <Route path="/app/account/:form?" component={ProfileSettings} />
-        <Route path="/app/:page?" component={Home} />
+        <Route exact path="/app/" component={Home} />
       </Switch>
     </div>
   );

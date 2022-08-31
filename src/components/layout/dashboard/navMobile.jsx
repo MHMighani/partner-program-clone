@@ -27,6 +27,21 @@ const links = [
         id: "billing",
         address: "/app/account/billing",
       },
+      {
+        label: "Email preferences",
+        id: "emails",
+        address: "/app/account/emails",
+      },
+      {
+        label: "security",
+        id: "security",
+        address: "/app/account/security",
+      },
+      {
+        label: "API tokens",
+        id: "token",
+        address: "/app/account/token",
+      },
     ],
   },
 ];

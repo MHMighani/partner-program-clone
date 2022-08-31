@@ -11,6 +11,15 @@
     max-width: 1216px;
     margin: 0 auto;
 
+    .performance,.partnership {
+        padding: 0 2.4rem 4.8rem;
+
+        @include desktop {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
     &__title {
         font-size: 2.4rem;
         padding: 3rem 2rem;
@@ -116,22 +125,36 @@
 
         &.balance  {
             .values {
-                
                 @include flex(column,center,flex-start);
 
                 @include desktop {
                     @include flex(row,space-around,center);
                 }
             }
+
+            .value {
+                @include flex(row,flex-start,center);
+            }
+
             .balance-value{
                 font-size: 2.4rem;
+
+                @include desktop {
+                    font-size: inherit;
+                    margin-right: 1rem;
+                }
+            }
+
+            .total-earnings {
+                width: 100%;
+                @include flex(row,space-between,center);
             }
         }
     }
 }
 
 .home-section .performance {
-    padding: 0 2.4rem 4.8rem;
+    
     &__title {
         @include title;
     }
@@ -190,7 +213,6 @@
 
 .home-section .partnership {
     @include flex(column,unset,unset);
-    padding: 0px 2.4rem 4.8rem;
 
     &__title {
         font-size: 1.8rem;
@@ -212,6 +234,7 @@
         width: 100%;
         max-width: 375px;
         padding: 0px 2rem;
+        padding-bottom: 3rem;
 
         .image-wrapper {
             position: relative;
@@ -235,6 +258,7 @@
 
         @include desktop {
             width: 328px;
+            padding-bottom: 0;
         }
     }
 

@@ -7,7 +7,7 @@ function LeftCard({ data = [], handler, selected, onCheckBoxClick }) {
       {data.map((item, index) => (
         <div onClick={() => handler(index)} className="side-item" key={item.id}>
           <input
-            onClick={(e) => onCheckBoxClick(item.id)}
+            onChange={() => onCheckBoxClick(item.id)}
             className="checkbox"
             type="checkbox"
             checked={item.checked}

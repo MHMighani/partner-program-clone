@@ -47,14 +47,14 @@ function BillingForm() {
           <div className="form-row radio-forms">
             <span className="label">Account type:</span>
             <div className="radio-wrapper">
-              <input type="radio" name="individual" id="individual-radio" />
-              <label htmlFor="individual" className="label">
+              <input type="radio" name="accountType" id="individual-radio" />
+              <label htmlFor="individual-radio" className="label">
                 individual
               </label>
             </div>
             <div className="radio-wrapper">
-              <input type="radio" name="business" id="business-radio" />
-              <label htmlFor="business" className="label">
+              <input type="radio" name="accountType" id="business-radio" />
+              <label htmlFor="business-radio" className="label">
                 Business
               </label>
             </div>

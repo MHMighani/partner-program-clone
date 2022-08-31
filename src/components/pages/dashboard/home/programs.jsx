@@ -1,4 +1,4 @@
-import rightArrowSvg from "../../../../assets/dashboard/right-arrow.svg";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 function InlineList() {
   const itemList = [
@@ -23,7 +23,7 @@ function CardTitle({ title }) {
   return (
     <div className="program-card__title">
       <div>{title}</div>
-      <img className="right-arrow" src={rightArrowSvg} alt="right arrow" />
+      <FaLongArrowAltRight className="right-arrow" />
     </div>
   );
 }
@@ -37,11 +37,11 @@ function BalanceCard() {
 
       <div className="values">
         <span>
-          <span className="balance-value">$0.00</span>
+          <span className="balance-value value">$0.00 </span>
         </span>
-        <span>
-          <span>total earnings</span>
-          <span>$0.00</span>
+        <span className="total-earnings">
+          <span className="value">total earnings</span>
+          <span className="value">$0.00</span>
         </span>
       </div>
 
@@ -90,22 +90,7 @@ function SolutionCard() {
 }
 
 function Programs() {
-  const programs = [
-    {
-      id: "balance",
-      title: "Balace",
-    },
-    {
-      id: "affiliate",
-      title: "Affiliate Program",
-    },
-    {
-      id: "solution",
-      title: "Solution Program",
-    },
-  ];
-
-  function ProgramCardsMobile() {
+  function ProgramCards() {
     return (
       <>
         <BalanceCard />
@@ -118,7 +103,7 @@ function Programs() {
   return (
     <div className="programs-wrapper">
       <div className="programs">
-        <ProgramCardsMobile />
+        <ProgramCards />
       </div>
     </div>
   );
