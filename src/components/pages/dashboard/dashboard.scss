@@ -12,7 +12,7 @@
         .section {
             flex: 1;
             width: 100%;
-            padding-left: 64px;
+            padding-left: 6.4rem;
         }
     }
     
@@ -34,7 +34,7 @@
 
     border-radius: 4px;
     line-height: 1.2;
-    font-size: 15px;
+    font-size: 1.5rem;
     color: #424d57;
     box-sizing: border-box;
     background-clip: padding-box;
@@ -50,11 +50,9 @@
         border-color: red !important;
     }
 
-    
-
     &[type="checkbox"],&[type="radio"] {
             background: #fff;
-            margin-right: 13px;
+            margin-right: 1.3rem;
             width: 18px;
             height: 18px;
             border: 1px solid #cfd3d5;

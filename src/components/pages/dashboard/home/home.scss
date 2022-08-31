@@ -49,7 +49,7 @@
 .home-section .programs {
     display: grid;
     width: 100%;
-    gap: 15px;
+    gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 
     .desktop {
@@ -76,7 +76,7 @@
         justify-content: space-between;
         font-size: 1.6rem;
 
-        * {
+        & > * {
             padding-bottom: 1rem;
         }
 
@@ -232,9 +232,13 @@
     .card {
         @include flex(row,unset,center);
         width: 100%;
-        max-width: 375px;
         padding: 0px 2rem;
         padding-bottom: 3rem;
+        border-bottom: 1px solid rgb(226, 226, 228);
+
+        &:last-of-type {
+            border-bottom: none;
+        }
 
         .image-wrapper {
             position: relative;
@@ -250,6 +254,7 @@
             font-size: 1.6rem;
             font-style: normal;
             font-weight: 400;
+            max-width: 375px;
             line-height: 2.2rem;
             letter-spacing: 0px;
             text-align: left;
@@ -259,6 +264,7 @@
         @include desktop {
             width: 328px;
             padding-bottom: 0;
+            border-bottom: none;
         }
     }
 
@@ -282,8 +288,8 @@
             margin-left: auto;
             font-style: normal;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 22px;
+            font-size: 1.4rem;
+            line-height: 2.2rem;
             cursor: pointer;
             transition: color .3s;
         }
@@ -311,7 +317,7 @@
         height: 302px;
         background: #fff;
         border: 1px solid #dde2e6;
-        margin-bottom: 18px;
+        margin-bottom: 1.8rem;
         position: relative;
         border-radius: 4px;
     }
@@ -325,7 +331,7 @@
 
 .explorer-desktop .main {
         flex: 1;
-        padding: 20px;
+        padding: 2rem;
         display: flex;
         align-items: center;
 
@@ -344,7 +350,7 @@
             max-width: 444px;
             font-size: 1.5rem;
             font-weight: 400;
-            line-height: 22px;
+            line-height: 2.2rem;
             margin: 1rem 0 1.6rem;
         }
 }
