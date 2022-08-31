@@ -3,21 +3,16 @@ import { useInView } from "react-intersection-observer";
 import "./highlight.scss";
 
 function Highlight({ children, color }) {
-  const {
-    ref: magicSectionRef,
-    inView,
-    entry,
-  } = useInView({
+  const { ref: magicSectionRef, inView } = useInView({
     trackVisibility: true,
     delay: 1000,
+    triggerOnce: true,
   });
 
   return (
     <strong
       ref={magicSectionRef}
-      className={`highlight ${color} ${
-        entry?.time > 1000 && inView ? "active" : ""
-      }`}
+      className={`highlight ${color} ${inView ? "active" : ""}`}
     >
       {children}
     </strong>
