@@ -8,15 +8,10 @@
 
     padding-bottom: 6.4rem;
 
-    .decor-item {
-        top: auto;
-        left: auto;
-        bottom: 0;
-        right: 0;
-        transform: translateY(-120%);
-    }
+    .decor__item {
+        margin-right: 25rem;
+        margin-bottom: 5rem;
 
-    .decor {
         @include showInDesktop;
     }
 
@@ -31,13 +26,6 @@
 
     .section__container {
         flex-direction: column;
-    }
-
-    .decor {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
     }
 
     .image-wrapper.desktop {
@@ -83,6 +71,7 @@
 
 .business-section__footer {
     @include desktop {
+        flex-basis: 33.33%;
         display: flex;
 
         .plan-container {
@@ -115,6 +104,7 @@
 .business-plan {
     @include flex(column,flex-start,flex-start);
     margin-bottom: 3rem;
+    margin-right: 1rem;
     
     flex-basis: 50%;
 
@@ -122,13 +112,23 @@
         font-size: 1.8rem;
         font-weight: 400;
         margin-bottom: 3.2rem;
+        
+        @include desktop {
+            height: 110px;
+        }
     }
 
     &__title {
         @include text-p4;
+        margin-bottom: 2.5rem;
+    }
+
+    &__link {
+        min-width: 25.6rem;
     }
 
     .developer-plan__link {
+        font-size: 1.6rem;
         @include flex(row,center,center);
     }
 }

@@ -4,19 +4,14 @@
     @include flex(column,center,center);
     position: relative;
 
-    .decor-item {
-        
-        top: 0;
-        bottom: auto;
+    .decor__item{
 
-        &.left {
-            left: 0;
-            right: auto;
+        &--right {
+            margin-right: -12rem;
         }
 
-        &.right {
-            left: auto;
-            right: 0;
+        &--left {
+            margin-left: -15rem;
         }
     }
 
@@ -30,6 +25,8 @@
 
     .section__title {
         @include text-p1;
+        margin-bottom: 2.5rem;
+        
     }
 
     .section__summary {
@@ -46,32 +43,17 @@
     
     &__plans {
         position: relative;
-        padding-top: 16rem;
+        padding-top: 10rem;
         padding-bottom: 5rem;
         width: 100%;
         @include flex(column,center,center);
         background-color: var(--grey-color);
 
-        .decor-item {
-            @include showInDesktop;
-        }
-    
-        .decor-item.left {
-            top: auto;
-            bottom: 0;
-            right: auto;
-            left: 0;
-        }
-    
-        .decor-item.right {
-            top: 0;
-            bottom: auto;
-            right:0;
-            left: auto;
+        @include desktop {
+            padding-top: 16rem;
         }
     }
 
-    
 
     .plan-items {
         @include flex(column,center,flex-start);
@@ -88,10 +70,11 @@
     }
 
     &__plan {
+        flex-basis: 33.33%;
+        margin-right: 3rem;
         .title {
             @include text-p4;
             margin-bottom: 2.4rem;
-
         }
 
         .description {

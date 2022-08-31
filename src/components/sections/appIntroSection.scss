@@ -1,7 +1,12 @@
 @use '../../styles/abstracts/' as *;
 
 .business-intro .app-intro-section {
+    position: relative;
     @include flex(column,unset,center);
+
+    .decor__item {
+        margin-top: 15rem;
+    }
 
     .intro{
         text-align: center;
@@ -16,12 +21,23 @@
         @include text-p1;
         margin-bottom: 3.2rem;
     }
+
+    .gray-layer {
+        position: absolute;
+        background-color: #f6f6f7;
+        height: 50%;
+        width: 100%;
+        bottom: 0;
+        z-index: -10;
+    }
 }
 
 .business-intro .app-intro-card {
     @include flex(column,space-between,center);
+    position: relative;
     margin-bottom:4rem;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 0 4px 0 rgba(0,0,0,.1);
+    background-color: #fff;
 
     @include tablet {
         flex-direction: row;
@@ -29,7 +45,7 @@
 
     .intro {
         @include flex(column,unset,flex-start);
-        padding: 4.8rem;
+        padding: 4rem;
 
         &__description {
             @include text-p5;

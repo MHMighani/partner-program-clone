@@ -16,7 +16,7 @@ function NavMenu({ navMenuItems }) {
 
   function handleNavItemEnter(e) {
     setIsOpen(true);
-    toggleClass(e.currentTarget, "active");
+    e.currentTarget.classList.add("active");
   }
 
   function handleNavItemLeave(e) {

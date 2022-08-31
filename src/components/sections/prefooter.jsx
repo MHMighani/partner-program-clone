@@ -19,12 +19,12 @@ function Prefooter() {
       <div className="container">
         <div rol="presentation" className="decor">
           <img
-            className="decor-item decor-item--left"
+            className="decor__item decor__item--left"
             src={BlobLeft}
             alt="blob decor left"
           />
           <img
-            className="decor-item decor-item--right"
+            className="decor__item decor__item--right"
             src={BlobRight}
             alt="blob decor right"
           />

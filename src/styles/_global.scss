@@ -65,6 +65,7 @@ a {
 
 body{
     font-family: var(--landpage-font);
+    line-height: 1.5;
 }
 
 .btn {
@@ -115,6 +116,16 @@ body{
         font-weight: 600;
         font-size: 1.5rem;
         background-color: var(--blue-color);
+
+        &--disabled {
+            background-color: #4384f5;
+        }
+    }
+
+    &--link {
+        display: inline-block;
+        padding: 0;
+        color: blue;
     }
 
     &--outline {

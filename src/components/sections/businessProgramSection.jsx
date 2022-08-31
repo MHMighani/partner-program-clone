@@ -43,7 +43,12 @@ function BusinessProgramSection() {
 
   const businesses = [
     {
-      title: <>Promote, earn, and&nbsp;grow</>,
+      title: (
+        <>
+          Promote, earn, <br />
+          and&nbsp;grow
+        </>
+      ),
       description:
         "Promote products that define excellent customer service. Monetize your audience by simply sharing a link.",
       linkText: "Affiliate Program",
@@ -74,7 +79,11 @@ function BusinessProgramSection() {
     <section className="section business-section">
       <div className="container container--xl">
         <div className="decor">
-          <img className="decor-item" src={images.BlobSvg} alt="blob" />
+          <img
+            className="decor__item decor__item--right decor__item--bottom"
+            src={images.BlobSvg}
+            alt="blob"
+          />
         </div>
         <div className="business-section__body">
           <div className="image-wrapper desktop">

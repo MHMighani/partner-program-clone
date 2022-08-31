@@ -80,16 +80,35 @@ function AppsIntroSection() {
   };
 
   return (
-    <section className="app-intro-section">
+    <section className="section app-intro-section">
       <div className="intro container">
+        <div className="decor">
+          <img
+            className="decor__item decor__item--right"
+            src={images.blobTopRight}
+            alt="blob decor"
+          />
+        </div>
         <SectionTitle title={sectionDetails.title} size="h2" />
         <p className="description">{sectionDetails.description}</p>
       </div>
       <div className="app-intro-cards container">
+        <div className="decor">
+          <img
+            className="decor__item decor__item--left"
+            src={images.blobBottomLeft}
+            alt="blob decor"
+          />
+          <img
+            className="decor__item decor__item--right"
+            src={images.blobBottomRight}
+            alt="blob decor"
+          />
+        </div>
         <AppIntroCard introDetails={livechatDetails} />
         <AppIntroCard introDetails={chatbotDetails} />
       </div>
-      <div className="grey-background"></div>
+      <div className="gray-layer"></div>
     </section>
   );
 }

@@ -1,38 +1,82 @@
 @use '../../styles/abstracts' as *;
 
-.section{
-    font-family: 'colfax-regular';
 
-    &__title {
-        font-family: 'colfax';
-        font-size: 3.62rem;
+.business-intro ::selection {
+    background: var(--yellow-color);
+    color: var(--btn-dark-color);
+}
 
-        @include smallScreens {
-            font-size: calc(3.62rem + 2.24562 * (100vw - $small-screen-breakpoint)/39);
-        }
+.business-intro .container {
+    position: relative;
+    max-width: 116rem;
 
-        @include largeDesktop {
-            font-size: 7.213rem;
-        }
+    &--xl {
+        max-width: 135.2rem;
     }
 
-    &__container{
-        @include flex(column,unset,unset);
-        position: relative;
+    &,&--xl{
         margin: 0 auto;
         padding: 0 2rem;
-
-        &--xl{
-            max-width: 135.2rem;
-        }
-
-        @include desktop{
-            flex-direction: row;
-        }   
     }
+}
+
+    .business-intro .decor-item {
+        position: absolute;
+        top: 0;
+    }
+
+    .business-intro .decor {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
+        --translation: 100%;
+
+        &__item {
+            position: absolute;
+            top: 0;
+            width: auto;
+
+            &--left {
+                left: 0;
+                transform: translateX(calc(var(--translation) * -1));
+            }
+
+            &--right {
+                right: 0;
+                transform: translateX(var(--translation));
+            }
+
+            &--bottom {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+
+.business-intro .section{
+    font-family: 'colfax-regular';
+    overflow: hidden;
+
 }
 
 .app-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.business-intro input[type=email] {
+    padding: .75rem;
+    height: 5rem;
+    line-height: normal;
+    box-shadow: none;
+    width: 100%;
+    border: 1px solid #0f0f10;
+    border-radius: .25rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }

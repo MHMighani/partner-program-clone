@@ -17,24 +17,20 @@ $prefooterBackground: var(--yellow-color);
         }
     }
 
-    .decor-item {
-        width: auto;
-
-        &--left {
-            left: 0;
-            transform: translateX(-100%);
-            
+    .decor__item {
+        &--right {
+            margin-right: 5rem;
         }
 
-        &--right {
-            right: 0;
-            transform: translateX(100%);
+        &--left {
+            margin-left: 5rem;
         }
     }
 
     .section__title {
         text-align: center;
-        margin-bottom: 2rem;
+        max-width: 54rem;
+        margin: 0 auto 2rem auto;
         @include text-p2;
         
         @include tablet {

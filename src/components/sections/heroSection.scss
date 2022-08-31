@@ -2,9 +2,9 @@
 
 .hero-section{
     padding-top: 4.8rem;
-    position: relative;
-
+    
     .container {
+        position: relative;
         @include flex(column,center,center);
 
         @include desktop {
@@ -15,7 +15,6 @@
 
     .section__title {
         @include text-p1;
-        
     }
     
     .section__title,&__description {
@@ -26,26 +25,12 @@
         }
     }
 
-    .decor-item {
-        right: auto;
-        left: 0;
-        transform: translateX(-60%);
-
-        display: none;
-        
-        @include largeDesktop {
-            display: block;
-        }
-    }
-
     &__description {
         @include text-p4;
         font-family: 'colfax-regular';
         font-weight: 400;
         max-width: 54.4rem;
-        margin-bottom: 4.8rem;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 2.5rem auto 4.5rem auto;
     }
 
     &__stats {

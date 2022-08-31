@@ -34,6 +34,7 @@
     }
 
     &__footer {
+        font-family: 'colfax-regular';
         font-size: 1.8rem;
         padding-top: 3rem;
         width: 100%;
@@ -41,8 +42,7 @@
     }
 
     @include tablet {
-        margin-left: 3rem;
-        
+        margin-left: 3rem;   
     }
 }
 

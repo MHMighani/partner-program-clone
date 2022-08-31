@@ -41,7 +41,11 @@ function HeroSection() {
     <section className="section hero-section">
       <div className="container container--xl">
         <div className="decor">
-          <img className="decor-item" src={BlobSvg} alt="blob-background" />
+          <img
+            className="decor__item decor__item--left"
+            src={BlobSvg}
+            alt="blob-background"
+          />
         </div>
         <div className="hero-section__intro">
           <SectionTitle title={title} />

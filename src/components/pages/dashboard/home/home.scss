@@ -71,6 +71,10 @@
             padding-bottom: 1rem;
         }
 
+        .desktop.btn--link {
+            text-align: left;
+        }
+
         .inline-list {
             @include flex(row,unset,unset);
             
@@ -164,7 +168,7 @@
         }
 
         &__description {
-            height: 100%;
+            // height: 100%;
             font-style: normal;
             font-weight: 400;
             font-size: 1.8rem;
@@ -271,6 +275,11 @@
         &:hover {
             background: #f6f6f7;
         }
+
+        &__label {
+            width: 100%;
+            @include flex(row,space-between,center);
+        }
     }
 
     .box {
@@ -288,16 +297,6 @@
         width: 360px;
         border-right: 1px solid #dde2e6;
     }
-
-    .checkbox {
-        background: #fff;
-        margin-right: 13px;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #cfd3d5;
-        border-radius: 3px;
-    }
-
 }
 
 .explorer-desktop .main {
