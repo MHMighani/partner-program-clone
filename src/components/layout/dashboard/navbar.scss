@@ -121,6 +121,14 @@ $sidebarTextColor: #c9c9cd;
         cursor: pointer;
         transition: all .3s;
 
+        &.header {
+            justify-content: flex-start;
+        }
+
+        .arrow {
+            margin-right: 1rem;
+        }
+
         &.active {
             border-left: 5px solid blue;
             background: #29292f;

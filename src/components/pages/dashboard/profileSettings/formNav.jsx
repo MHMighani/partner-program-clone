@@ -41,7 +41,7 @@ function FormNav() {
   return (
     <div className="form-nav">
       <div className="form-nav__title">{title}</div>
-      <div form-nav__items>
+      <div className="form-nav__items">
         {navItemData.map((item) => {
           return (
             <Link
@@ -49,8 +49,6 @@ function FormNav() {
               key={item.id}
               className={`${item.id === form ? "active" : ""} form-nav__item`}
             >
-              {/* <img className="item-icon" src={item.image} alt={item.label} /> */}
-
               <item.image
                 className="item-icon"
                 stroke={item.id === form ? "blue" : "grey"}

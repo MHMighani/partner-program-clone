@@ -1,6 +1,5 @@
 import Sidebar from "./sidebar";
 import NavMobile from "./navMobile";
-import { useLocation } from "react-router-dom";
 
 import * as sidebarIcons from "../../../assets/dashboard/sidebar";
 
