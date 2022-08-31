@@ -1,10 +1,10 @@
 import { useState } from "react";
 import NavMenu from "./navMenu";
 import AuthLink from "./authLinks";
-import NavLogo from "../../assets/businessIntro/partner-programs-logo.svg";
-import { ReactComponent as LivechatLogo } from "../../assets/businessIntro/livechat.svg";
-import { ReactComponent as ChatbotLogo } from "../../assets/businessIntro/chatbot.svg";
-import HamburgerBtn from "../common/hamburgerBtn/hamburgerBtn";
+import NavLogo from "../../../assets/businessIntro/partner-programs-logo.svg";
+import { ReactComponent as LivechatLogo } from "../../../assets/businessIntro/livechat.svg";
+import { ReactComponent as ChatbotLogo } from "../../../assets/businessIntro/chatbot.svg";
+import HamburgerBtn from "../../common/hamburgerBtn/hamburgerBtn";
 
 import "./navbar.scss";
 

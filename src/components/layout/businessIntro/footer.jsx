@@ -1,8 +1,8 @@
-import { ReactComponent as PartnerProgramsLogo } from "../../assets/businessIntro/partner-programs-logo.svg";
+import { ReactComponent as PartnerProgramsLogo } from "../../../assets/businessIntro/partner-programs-logo.svg";
 
-import mailIcon from "../../assets/businessIntro/footer/mail.svg";
-import { ReactComponent as TwitterIcon } from "../../assets/businessIntro/footer/twitter.svg";
-import { ReactComponent as FacebookIcon } from "../../assets/businessIntro/footer/facebook.svg";
+import mailIcon from "../../../assets/businessIntro/footer/mail.svg";
+import { ReactComponent as TwitterIcon } from "../../../assets/businessIntro/footer/twitter.svg";
+import { ReactComponent as FacebookIcon } from "../../../assets/businessIntro/footer/facebook.svg";
 
 import "./footer.scss";
 

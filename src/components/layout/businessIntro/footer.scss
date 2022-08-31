@@ -1,6 +1,6 @@
 $footerBackgroundColor: var(--grey-color);
 
-@use '../../styles/abstracts/' as *;
+@use '../../../styles/abstracts/' as *;
 
 .business-intro .footer {
     background-color: $footerBackgroundColor;

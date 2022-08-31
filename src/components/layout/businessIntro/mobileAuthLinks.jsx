@@ -1,4 +1,4 @@
-import EmailSignupForm from "../forms/emailSignupForm";
+import EmailSignupForm from "../../forms/emailSignupForm";
 
 function MobileAuthLinks() {
   return (

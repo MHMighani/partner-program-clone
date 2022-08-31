@@ -1,4 +1,4 @@
-import Navbar from "../layout/navbar";
+import Navbar from "../layout/businessIntro/navbar";
 import HeroSection from "../sections/heroSection";
 import SectionSeperator from "../../assets/businessIntro/section-seperator";
 import BusinessProgramSection from "../sections/businessProgramSection";
@@ -8,7 +8,7 @@ import PartnersLogos from "../sections/partnersLogos";
 import PartnersSection from "../sections/partnersSection";
 import QuoteTwo from "../sections/quoteTwo";
 import Prefooter from "../sections/prefooter";
-import Footer from "../layout/footer";
+import Footer from "../layout/businessIntro/footer";
 
 import "./generalSectionStyles.scss";
 
